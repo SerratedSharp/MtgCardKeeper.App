@@ -1,0 +1,78 @@
+﻿div.mtgc-card {
+    height: 450px;
+    max-height: 450px
+}
+
+.mtgc-header {
+    backdrop-filter: /*blur(2px)*/ contrast(0.4) brightness(180%);
+    z-index: 1000;
+
+    &>div
+    {
+        
+        background: radial-gradient(ellipse farthest-corner, #E0E7ED77 50%, #BDC6CD);
+        position: relative;
+        border: 2px solid #000;
+        border-radius: 10px/20px;
+        box-shadow: inset 2px -3px 0 #aaa, inset -1px 1px 0 #fff;
+        
+        
+    }
+
+    .mtgc-card-name {
+        display:inline-block;
+        line-height: 14px;
+    }
+
+}
+
+.mtgc-text-body {    
+    overflow-y: auto; /* Text scroll bar*/
+
+    .card-text
+    {
+        backdrop-filter: contrast(0.3) brightness(200%) /*blur(1px)*/;        
+        box-shadow: 0px 0px 0 2px #FFF, -2px 2px 0 1px #000, inset -1px 1px 0 1px #999;        
+        border-bottom: 0 none;
+        border-left: 0 none;
+        background: #FFF8;
+        text-shadow: 0 0 BLACK, 1px 1px WHITE; /* improves text legibility */        
+        position: relative;
+    }    
+
+}
+
+.mtgc-artist-overlay {
+    text-shadow: 1px 1px 1px #0009;    
+}
+
+/* pt: power toughness box 2/3 */
+.mtgc-pt {
+    
+    text-align: center;
+    box-shadow: -2px 1px 2px 0 rgba(0, 0, 0, 0.8);
+   
+    float: right;
+   
+    padding: 2px;/* Creates space between outer/inner borders */
+    background: #ddd;
+    border-radius: 8px / 20px;
+     position: relative;
+     top: -4px;    
+    z-index: 2;
+}
+
+.mtgc-inner {    
+    box-shadow: inset -2px 2px 1px #333, inset 1px -1px 0 #fff;
+  
+    border: 0 none;
+   font-size: 16px;
+   font-weight:bold;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: normal;   
+    background: radial-gradient(ellipse farthest-corner, #E0E7ED 50%, #BDC6CD);
+    position: relative;    
+    border-radius: 10px / 20px;
+   
+}
+

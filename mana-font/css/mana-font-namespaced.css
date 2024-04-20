@@ -1,0 +1,2282 @@
+﻿@font-face {
+    font-family: "Mana";
+    src: url("../fonts/mana.eot?v=1.15.9");
+    src: url("../fonts/mana.eot?#iefix&v=1.15.9") format("embedded-opentype"), url("../fonts/mana.woff?v=1.15.9") format("woff"), url("../fonts/mana.ttf?v=1.15.9") format("truetype"), url("../fonts/mana.svg?v=1.15.9#mana") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MPlantin";
+    src: url("../fonts/mplantin.eot?v=1.15.9");
+    src: url("../fonts/mplantin.eot?#iefix&v=1.15.9") format("embedded-opentype"), url("../fonts/mplantin.woff?v=1.15.9") format("woff"), url("../fonts/mplantin.ttf?v=1.15.9") format("truetype"), url("../fonts/mplantin.svg?v=1.15.9#mplantin") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.mtgs {
+    display: inline-block;
+    font: normal normal normal 14px Mana;
+    font-size: inherit;
+    line-height: 1em;
+    text-rendering: auto;
+    transform: translate(0, 0);
+    speak: none;
+    text-transform: none;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: initial;
+}
+
+.mtgs-w::before {
+    content: "\e600";
+}
+
+.mtgs-w-original::before {
+    content: "\e997";
+}
+
+.mtgs-w-list::before {
+    content: "\e998";
+}
+
+.mtgs-u::before {
+    content: "\e601";
+}
+
+.mtgs-b::before {
+    content: "\e602";
+}
+
+.mtgs-r::before {
+    content: "\e603";
+}
+
+.mtgs-g::before {
+    content: "\e604";
+}
+
+.mtgs-0::before {
+    content: "\e605";
+}
+
+.mtgs-1::before {
+    content: "\e606";
+}
+
+.mtgs-2::before {
+    content: "\e607";
+}
+
+.mtgs-3::before {
+    content: "\e608";
+}
+
+.mtgs-4::before {
+    content: "\e609";
+}
+
+.mtgs-5::before {
+    content: "\e60a";
+}
+
+.mtgs-6::before {
+    content: "\e60b";
+}
+
+.mtgs-7::before {
+    content: "\e60c";
+}
+
+.mtgs-8::before {
+    content: "\e60d";
+}
+
+.mtgs-9::before {
+    content: "\e60e";
+}
+
+.mtgs-10::before {
+    content: "\e60f";
+}
+
+.mtgs-11::before {
+    content: "\e610";
+}
+
+.mtgs-12::before {
+    content: "\e611";
+}
+
+.mtgs-13::before {
+    content: "\e612";
+}
+
+.mtgs-14::before {
+    content: "\e613";
+}
+
+.mtgs-15::before {
+    content: "\e614";
+}
+
+.mtgs-16::before {
+    content: "\e62a";
+}
+
+.mtgs-17::before {
+    content: "\e62b";
+}
+
+.mtgs-18::before {
+    content: "\e62c";
+}
+
+.mtgs-19::before {
+    content: "\e62d";
+}
+
+.mtgs-20::before {
+    content: "\e62e";
+}
+
+.mtgs-x::before {
+    content: "\e615";
+}
+
+.mtgs-y::before {
+    content: "\e616";
+}
+
+.mtgs-z::before {
+    content: "\e617";
+}
+
+.mtgs-p::before {
+    content: "\e618";
+}
+
+.mtgs-s::before {
+    content: "\e619";
+}
+
+.mtgs-s-mtga::before {
+    content: "\e996";
+}
+
+.mtgs-c::before {
+    content: "\e904";
+}
+
+.mtgs-e::before, .mtgs-energy::before {
+    content: "\e907";
+}
+
+.mtgs-acorn::before {
+    content: "\e929";
+}
+
+.mtgs-ticket::before, .mtgs-tk::before {
+    content: "\e9c4";
+}
+
+.mtgs-1-2::before {
+    content: "\e902";
+}
+
+.mtgs-infinity::before {
+    content: "\e903";
+}
+
+.mtgs-tap::before {
+    content: "\e61a";
+}
+
+.mtgs-untap::before {
+    content: "\e61b";
+}
+
+.mtgs-tap-alt::before {
+    content: "\e61c";
+}
+
+.mtgs-chaos::before {
+    content: "\e61d";
+}
+
+.mtgs-artifact::before {
+    content: "\e61e";
+}
+
+.mtgs-battle::before {
+    content: "\e9d1";
+}
+
+.mtgs-battle-siege::before {
+    content: "\e9d2";
+}
+
+.mtgs-commander::before {
+    content: "\e9c6";
+}
+
+.mtgs-conspiracy::before {
+    content: "\e972";
+}
+
+.mtgs-creature::before {
+    content: "\e61f";
+}
+
+.mtgs-enchantment::before {
+    content: "\e620";
+}
+
+.mtgs-dungeon::before {
+    content: "\e995";
+}
+
+.mtgs-instant::before {
+    content: "\e621";
+}
+
+.mtgs-land::before {
+    content: "\e622";
+}
+
+.mtgs-multicolor::before {
+    content: "\e985";
+}
+
+.mtgs-phenomenon::before {
+    content: "\e96e";
+}
+
+.mtgs-plane::before {
+    content: "\e96f";
+}
+
+.mtgs-planeswalker::before {
+    content: "\e623";
+}
+
+.mtgs-rarity::before {
+    content: "\e96c";
+}
+
+.mtgs-saga::before {
+    content: "\e92a";
+}
+
+.mtgs-scheme::before {
+    content: "\e970";
+}
+
+.mtgs-sorcery::before {
+    content: "\e624";
+}
+
+.mtgs-token::before {
+    content: "\e96d";
+}
+
+.mtgs-tribal::before, .mtgs-multiple::before {
+    content: "\e925";
+}
+
+.mtgs-vanguard::before {
+    content: "\e971";
+}
+
+.mtgs-hand::before {
+    content: "\e9ca";
+}
+
+.mtgs-library::before {
+    content: "\e9cb";
+}
+
+.mtgs-graveyard::before {
+    content: "\e9cc";
+}
+
+.mtgs-exile::before {
+    content: "\e9cd";
+}
+
+.mtgs-wu::before, .mtgs-wb::before, .mtgs-rw::after, .mtgs-gw::after, .mtgs-2w::after {
+    content: "\e600";
+}
+
+.mtgs-ub::before, .mtgs-ur::before, .mtgs-wu::after, .mtgs-gu::after, .mtgs-2u::after {
+    content: "\e601";
+}
+
+.mtgs-br::before, .mtgs-bg::before, .mtgs-wb::after, .mtgs-ub::after, .mtgs-2b::after {
+    content: "\e602";
+}
+
+.mtgs-rw::before, .mtgs-rg::before, .mtgs-ur::after, .mtgs-br::after, .mtgs-2r::after {
+    content: "\e603";
+}
+
+.mtgs-gw::before, .mtgs-gu::before, .mtgs-bg::after, .mtgs-rg::after, .mtgs-2g::after {
+    content: "\e604";
+}
+
+.mtgs-2w::before, .mtgs-2u::before, .mtgs-2b::before, .mtgs-2r::before, .mtgs-2g::before {
+    content: "\e607";
+}
+
+.mtgs-wp::before, .mtgs-up::before, .mtgs-bp::before, .mtgs-rp::before, .mtgs-gp::before, .mtgs-wup::before, .mtgs-wup::after, .mtgs-wbp::before, .mtgs-wbp::after, .mtgs-ubp::before, .mtgs-ubp::after, .mtgs-urp::before, .mtgs-urp::after, .mtgs-brp::before, .mtgs-brp::after, .mtgs-bgp::before, .mtgs-bgp::after, .mtgs-rwp::before, .mtgs-rwp::after, .mtgs-rgp::before, .mtgs-rgp::after, .mtgs-gwp::before, .mtgs-gwp::after, .mtgs-gup::before, .mtgs-gup::after {
+    content: "\e618";
+}
+
+.mtgs-100::before {
+    content: "\e900";
+}
+
+.mtgs-1000000::before {
+    content: "\e901";
+}
+
+.mtgs-loyalty-up::before {
+    content: "\e627";
+}
+
+.mtgs-loyalty-down::before {
+    content: "\e625";
+}
+
+.mtgs-loyalty-zero::before {
+    content: "\e626";
+}
+
+.mtgs-loyalty-start::before {
+    content: "\e628";
+}
+
+.mtgs-defense::before {
+    content: "\e9d7";
+}
+
+.mtgs-defense-border::before {
+    content: "\e9d8";
+}
+
+.mtgs-level::before {
+    content: "\e9c7";
+}
+
+.mtgs-level::after {
+    content: "\e9c8";
+}
+
+.mtgs-dfc-back::before {
+    content: "\e9d4";
+}
+
+.mtgs-dfc-day::before {
+    content: "\e906";
+}
+
+.mtgs-dfc-emrakul::before {
+    content: "\e90a";
+}
+
+.mtgs-dfc-enchantment::before {
+    content: "\e920";
+}
+
+.mtgs-dfc-facedown::before {
+    content: "\e9d6";
+}
+
+.mtgs-dfc-front::before {
+    content: "\e9d3";
+}
+
+.mtgs-dfc-ignite::before {
+    content: "\e908";
+}
+
+.mtgs-dfc-land::before {
+    content: "\e9c5";
+}
+
+.mtgs-dfc-lesson::before {
+    content: "\e98f";
+}
+
+.mtgs-dfc-meld::before {
+    content: "\e9d5";
+}
+
+.mtgs-dfc-modal-back::before {
+    content: "\e984";
+}
+
+.mtgs-dfc-modal-face::before {
+    content: "\e983";
+}
+
+.mtgs-dfc-moon::before {
+    content: "\e90b";
+}
+
+.mtgs-dfc-night::before {
+    content: "\e905";
+}
+
+.mtgs-dfc-saga::before {
+    content: "\e9cf";
+}
+
+.mtgs-dfc-saga-creature::before {
+    content: "\e9d0";
+}
+
+.mtgs-dfc-spark::before {
+    content: "\e909";
+}
+
+.mtgs-flashback::before {
+    content: "\e629";
+}
+
+.mtgs-power::before {
+    content: "\e921";
+}
+
+.mtgs-toughness::before {
+    content: "\e922";
+}
+
+.mtgs-artist-brush::before {
+    content: "\e923";
+}
+
+.mtgs-artist-nib::before {
+    content: "\e924";
+}
+
+.mtgs-guild-azorius::before {
+    content: "\e90c";
+}
+
+.mtgs-guild-boros::before {
+    content: "\e90d";
+}
+
+.mtgs-guild-dimir::before {
+    content: "\e90e";
+}
+
+.mtgs-guild-golgari::before {
+    content: "\e90f";
+}
+
+.mtgs-guild-gruul::before {
+    content: "\e910";
+}
+
+.mtgs-guild-izzet::before {
+    content: "\e911";
+}
+
+.mtgs-guild-orzhov::before {
+    content: "\e912";
+}
+
+.mtgs-guild-rakdos::before {
+    content: "\e913";
+}
+
+.mtgs-guild-selesnya::before {
+    content: "\e914";
+}
+
+.mtgs-guild-simic::before {
+    content: "\e915";
+}
+
+.mtgs-clan-abzan::before {
+    content: "\e916";
+}
+
+.mtgs-clan-jeskai::before {
+    content: "\e917";
+}
+
+.mtgs-clan-mardu::before {
+    content: "\e918";
+}
+
+.mtgs-clan-sultai::before {
+    content: "\e919";
+}
+
+.mtgs-clan-temur::before {
+    content: "\e91a";
+}
+
+.mtgs-clan-atarka::before {
+    content: "\e91b";
+}
+
+.mtgs-clan-dromoka::before {
+    content: "\e91c";
+}
+
+.mtgs-clan-kolaghan::before {
+    content: "\e91d";
+}
+
+.mtgs-clan-ojutai::before {
+    content: "\e91e";
+}
+
+.mtgs-clan-silumgar::before {
+    content: "\e91f";
+}
+
+.mtgs-polis-setessa::before {
+    content: "\e926";
+}
+
+.mtgs-polis-akros::before {
+    content: "\e927";
+}
+
+.mtgs-polis-meletis::before {
+    content: "\e928";
+}
+
+.mtgs-school-lorehold::before {
+    content: "\e99a";
+}
+
+.mtgs-school-prismari::before {
+    content: "\e99c";
+}
+
+.mtgs-school-quandrix::before {
+    content: "\e99e";
+}
+
+.mtgs-school-silverquill::before {
+    content: "\e9a0";
+}
+
+.mtgs-school-witherbloom::before {
+    content: "\e9a2";
+}
+
+.mtgs-counter-arrow::before {
+    content: "\e92b";
+}
+
+.mtgs-counter-brick::before {
+    content: "\e92c";
+}
+
+.mtgs-counter-charge::before {
+    content: "\e92d";
+}
+
+.mtgs-counter-damage::before {
+    content: "\e9dd";
+}
+
+.mtgs-counter-devotion::before {
+    content: "\e92e";
+}
+
+.mtgs-counter-doom::before {
+    content: "\e92f";
+}
+
+.mtgs-counter-echo::before {
+    content: "\e930";
+}
+
+.mtgs-counter-flame::before {
+    content: "\e931";
+}
+
+.mtgs-counter-flood::before {
+    content: "\e932";
+}
+
+.mtgs-counter-fungus::before {
+    content: "\e933";
+}
+
+.mtgs-counter-gold::before {
+    content: "\e934";
+}
+
+.mtgs-counter-ki::before {
+    content: "\e935";
+}
+
+.mtgs-counter-lore::before {
+    content: "\e936";
+}
+
+.mtgs-counter-loyalty::before {
+    content: "\e937";
+}
+
+.mtgs-counter-mining::before {
+    content: "\e938";
+}
+
+.mtgs-counter-minus::before {
+    content: "\e939";
+}
+
+.mtgs-counter-minus-uneven::before {
+    content: "\e943";
+}
+
+.mtgs-counter-muster::before {
+    content: "\e93a";
+}
+
+.mtgs-counter-paw::before {
+    content: "\e93b";
+}
+
+.mtgs-counter-pin::before {
+    content: "\e93c";
+}
+
+.mtgs-counter-plus::before {
+    content: "\e93d";
+}
+
+.mtgs-counter-plus-uneven::before {
+    content: "\e944";
+}
+
+.mtgs-counter-scream::before {
+    content: "\e93e";
+}
+
+.mtgs-counter-skeleton::before {
+    content: "\e93f";
+}
+
+.mtgs-counter-skull::before {
+    content: "\e940";
+}
+
+.mtgs-counter-slime::before {
+    content: "\e941";
+}
+
+.mtgs-counter-time::before {
+    content: "\e942";
+}
+
+.mtgs-counter-verse::before {
+    content: "\e945";
+}
+
+.mtgs-counter-void::before {
+    content: "\e9ec";
+}
+
+.mtgs-counter-vortex::before {
+    content: "\e946";
+}
+
+.mtgs-counter-shield::before {
+    content: "\e9c3";
+}
+
+.mtgs-counter-stun::before {
+    content: "\e9c2";
+}
+
+.mtgs-ability-activated::before, .mtgs-ability-crew::before, .mtgs-ability-cycling::before {
+    content: "\e947";
+}
+
+.mtgs-ability-adamant::before {
+    content: "\e974";
+}
+
+.mtgs-ability-adapt::before {
+    content: "\e975";
+}
+
+.mtgs-ability-addendum::before {
+    content: "\e976";
+}
+
+.mtgs-ability-adventure::before {
+    content: "\e948";
+}
+
+.mtgs-ability-afflict::before {
+    content: "\e977";
+}
+
+.mtgs-ability-afterlife::before {
+    content: "\e978";
+}
+
+.mtgs-ability-aftermath::before {
+    content: "\e979";
+}
+
+.mtgs-ability-alliance::before {
+    content: "\e9b5";
+}
+
+.mtgs-ability-amass-orcs::before {
+    content: "\e9e0";
+}
+
+.mtgs-ability-amass-zombies::before, .mtgs-ability-amass::before {
+    content: "\e97a";
+}
+
+.mtgs-ability-ascend::before {
+    content: "\e94a";
+}
+
+.mtgs-ability-backup::before {
+    content: "\e9d9";
+}
+
+.mtgs-ability-bargain::before {
+    content: "\e9e2";
+}
+
+.mtgs-ability-blitz::before {
+    content: "\e9b4";
+}
+
+.mtgs-ability-boast::before {
+    content: "\e991";
+}
+
+.mtgs-ability-casualty::before {
+    content: "\e9b7";
+}
+
+.mtgs-ability-celebration::before {
+    content: "\e9e3";
+}
+
+.mtgs-ability-changeling::before {
+    content: "\e9a6";
+}
+
+.mtgs-ability-channel::before {
+    content: "\e9b1";
+}
+
+.mtgs-ability-cleave::before {
+    content: "\e9ad";
+}
+
+.mtgs-ability-combat-condition::before {
+    content: "\e9ce";
+}
+
+.mtgs-ability-companion::before {
+    content: "\e97b";
+}
+
+.mtgs-ability-constellation::before {
+    content: "\e97c";
+}
+
+.mtgs-ability-convoke-original::before {
+    content: "\e949";
+}
+
+.mtgs-ability-convoke::before {
+    content: "\e9da";
+}
+
+.mtgs-ability-corrupted::before {
+    content: "\e9c0";
+}
+
+.mtgs-ability-coven::before {
+    content: "\e9aa";
+}
+
+.mtgs-ability-d20::before {
+    content: "\e999";
+}
+
+.mtgs-ability-day-night::before {
+    content: "\e9a8";
+}
+
+.mtgs-ability-daybound-nightbound::before {
+    content: "\e9a9";
+}
+
+.mtgs-ability-deathtouch::before {
+    content: "\e94b";
+}
+
+.mtgs-ability-decayed::before {
+    content: "\e9ac";
+}
+
+.mtgs-ability-defender::before {
+    content: "\e94c";
+}
+
+.mtgs-ability-devotion::before {
+    content: "\e97d";
+}
+
+.mtgs-ability-disturb::before {
+    content: "\e9ae";
+}
+
+.mtgs-ability-domain::before {
+    content: "\e9a7";
+}
+
+.mtgs-ability-double-strike::before {
+    content: "\e94d";
+}
+
+.mtgs-ability-dungeon::before {
+    content: "\e995";
+}
+
+.mtgs-ability-embalm::before {
+    content: "\e97e";
+}
+
+.mtgs-ability-enlist::before {
+    content: "\e9ba";
+}
+
+.mtgs-ability-enrage::before {
+    content: "\e9dc";
+}
+
+.mtgs-ability-enrage-original::before {
+    content: "\e94e";
+}
+
+.mtgs-ability-escape::before {
+    content: "\e969";
+}
+
+.mtgs-ability-eternalize::before {
+    content: "\e97f";
+}
+
+.mtgs-ability-exploit::before {
+    content: "\e9af";
+}
+
+.mtgs-ability-explore::before {
+    content: "\e94f";
+}
+
+.mtgs-ability-fabricate::before {
+    content: "\e9a5";
+}
+
+.mtgs-ability-first-strike::before {
+    content: "\e950";
+}
+
+.mtgs-ability-flash::before {
+    content: "\e951";
+}
+
+.mtgs-ability-flying::before {
+    content: "\e952";
+}
+
+.mtgs-ability-for-mirrodin::before {
+    content: "\e9c1";
+}
+
+.mtgs-ability-foretell::before {
+    content: "\e990";
+}
+
+.mtgs-ability-goad::before {
+    content: "\e9c9";
+}
+
+.mtgs-ability-haste::before {
+    content: "\e953";
+}
+
+.mtgs-ability-hexproof::before {
+    content: "\e954";
+}
+
+.mtgs-ability-hexproof-black::before {
+    content: "\e955";
+}
+
+.mtgs-ability-hexproof-blue::before {
+    content: "\e956";
+}
+
+.mtgs-ability-hexproof-green::before {
+    content: "\e957";
+}
+
+.mtgs-ability-hexproof-red::before {
+    content: "\e958";
+}
+
+.mtgs-ability-hexproof-white::before {
+    content: "\e959";
+}
+
+.mtgs-ability-hideaway::before {
+    content: "\e9b8";
+}
+
+.mtgs-ability-improvise::before {
+    content: "\e9de";
+}
+
+.mtgs-ability-incubate::before {
+    content: "\e9db";
+}
+
+.mtgs-ability-indestructible::before {
+    content: "\e95a";
+}
+
+.mtgs-ability-investigate::before {
+    content: "\e9ab";
+}
+
+.mtgs-ability-jumpstart::before {
+    content: "\e95b";
+}
+
+.mtgs-ability-kicker::before {
+    content: "\e989";
+}
+
+.mtgs-ability-landfall::before {
+    content: "\e988";
+}
+
+.mtgs-ability-learn::before {
+    content: "\e994";
+}
+
+.mtgs-ability-lifelink::before {
+    content: "\e95c";
+}
+
+.mtgs-ability-magecraft::before {
+    content: "\e993";
+}
+
+.mtgs-ability-meld::before {
+    content: "\e9bd";
+}
+
+.mtgs-ability-menace::before {
+    content: "\e95d";
+}
+
+.mtgs-ability-mentor::before {
+    content: "\e95e";
+}
+
+.mtgs-ability-mutate::before {
+    content: "\e980";
+}
+
+.mtgs-ability-ninjutsu::before {
+    content: "\e9b2";
+}
+
+.mtgs-ability-obscura::before {
+    content: "\e9b6";
+}
+
+.mtgs-ability-party::before {
+    content: "\e987";
+}
+
+.mtgs-ability-phyrexian::before {
+    content: "\e618";
+}
+
+.mtgs-ability-proliferate::before {
+    content: "\e981";
+}
+
+.mtgs-ability-prototype::before {
+    content: "\e9be";
+}
+
+.mtgs-ability-prowess::before {
+    content: "\e982";
+}
+
+.mtgs-ability-raid::before {
+    content: "\e95f";
+}
+
+.mtgs-ability-reach::before {
+    content: "\e960";
+}
+
+.mtgs-ability-read-ahead::before {
+    content: "\e9b9";
+}
+
+.mtgs-ability-reconfigure::before {
+    content: "\e9b3";
+}
+
+.mtgs-ability-revolt::before {
+    content: "\e961";
+}
+
+.mtgs-ability-ring-bearer::before {
+    content: "\e9df";
+}
+
+.mtgs-ability-riot::before {
+    content: "\e973";
+}
+
+.mtgs-ability-role-cursed::before {
+    content: "\e9e6";
+}
+
+.mtgs-ability-role-monster::before {
+    content: "\e9e7";
+}
+
+.mtgs-ability-role-royal::before {
+    content: "\e9e8";
+}
+
+.mtgs-ability-role-sorceror::before {
+    content: "\e9e9";
+}
+
+.mtgs-ability-role-wicked::before {
+    content: "\e9ea";
+}
+
+.mtgs-ability-role-young-hero::before {
+    content: "\e9eb";
+}
+
+.mtgs-ability-specialize::before {
+    content: "\e9bb";
+}
+
+.mtgs-ability-spectacle::before {
+    content: "\e96b";
+}
+
+.mtgs-ability-static::before, .mtgs-ability-enchant::before {
+    content: "\e962";
+}
+
+.mtgs-ability-summoning-sickness::before {
+    content: "\e96a";
+}
+
+.mtgs-ability-surveil::before {
+    content: "\e963";
+}
+
+.mtgs-ability-the-ring-tempts-you::before {
+    content: "\e9e1";
+}
+
+.mtgs-ability-toxic::before {
+    content: "\e9bf";
+}
+
+.mtgs-ability-training::before {
+    content: "\e9b0";
+}
+
+.mtgs-ability-trample::before {
+    content: "\e964";
+}
+
+.mtgs-ability-transform::before {
+    content: "\e965";
+}
+
+.mtgs-ability-triggered::before {
+    content: "\e966";
+}
+
+.mtgs-ability-undergrowth::before {
+    content: "\e967";
+}
+
+.mtgs-ability-unearth::before {
+    content: "\e9bc";
+}
+
+.mtgs-ability-vigilance::before {
+    content: "\e968";
+}
+
+.mtgs-ability-ward::before {
+    content: "\e992";
+}
+
+.mtgs-ability-haktos-the-unscarred::before {
+    content: "\e9e4";
+}
+
+.mtgs-ability-robber-of-the-rich::before {
+    content: "\e9e5";
+}
+
+.mtgs-cost {
+    background-color: #beb9b2;
+    border-radius: 1em;
+    color: #111;
+    font-size: 0.75em;
+    width: 1.3em;
+    height: 1.3em;
+    line-height: 1.30em;
+    text-align: center;
+    vertical-align: baseline;
+}
+
+    .mtgs-cost.mtgs-w, .mtgs-cost.mtgs-wp {
+        background-color: #f0f2c0;
+    }
+
+    .mtgs-cost.mtgs-u, .mtgs-cost.mtgs-up {
+        background-color: #b5cde3;
+    }
+
+    .mtgs-cost.mtgs-b, .mtgs-cost.mtgs-bp {
+        background-color: #aca29a;
+    }
+
+    .mtgs-cost.mtgs-r, .mtgs-cost.mtgs-rp {
+        background-color: #db8664;
+    }
+
+    .mtgs-cost.mtgs-g, .mtgs-cost.mtgs-gp {
+        background-color: #93b483;
+    }
+
+    .mtgs-cost.mtgs-wu, .mtgs-cost.mtgs-wb, .mtgs-cost.mtgs-ub, .mtgs-cost.mtgs-ur, .mtgs-cost.mtgs-br, .mtgs-cost.mtgs-bg, .mtgs-cost.mtgs-rw, .mtgs-cost.mtgs-rg, .mtgs-cost.mtgs-gw, .mtgs-cost.mtgs-gu, .mtgs-cost.mtgs-2w, .mtgs-cost.mtgs-2u, .mtgs-cost.mtgs-2b, .mtgs-cost.mtgs-2r, .mtgs-cost.mtgs-2g, .mtgs-cost.mtgs-wup, .mtgs-cost.mtgs-wbp, .mtgs-cost.mtgs-ubp, .mtgs-cost.mtgs-urp, .mtgs-cost.mtgs-brp, .mtgs-cost.mtgs-bgp, .mtgs-cost.mtgs-rwp, .mtgs-cost.mtgs-rgp, .mtgs-cost.mtgs-gwp, .mtgs-cost.mtgs-gup {
+        position: relative;
+        width: 1.3em;
+        height: 1.3em;
+    }
+
+        .mtgs-cost.mtgs-wu::before, .mtgs-cost.mtgs-wu::after, .mtgs-cost.mtgs-wb::before, .mtgs-cost.mtgs-wb::after, .mtgs-cost.mtgs-ub::before, .mtgs-cost.mtgs-ub::after, .mtgs-cost.mtgs-ur::before, .mtgs-cost.mtgs-ur::after, .mtgs-cost.mtgs-br::before, .mtgs-cost.mtgs-br::after, .mtgs-cost.mtgs-bg::before, .mtgs-cost.mtgs-bg::after, .mtgs-cost.mtgs-rw::before, .mtgs-cost.mtgs-rw::after, .mtgs-cost.mtgs-rg::before, .mtgs-cost.mtgs-rg::after, .mtgs-cost.mtgs-gw::before, .mtgs-cost.mtgs-gw::after, .mtgs-cost.mtgs-gu::before, .mtgs-cost.mtgs-gu::after, .mtgs-cost.mtgs-2w::before, .mtgs-cost.mtgs-2w::after, .mtgs-cost.mtgs-2u::before, .mtgs-cost.mtgs-2u::after, .mtgs-cost.mtgs-2b::before, .mtgs-cost.mtgs-2b::after, .mtgs-cost.mtgs-2r::before, .mtgs-cost.mtgs-2r::after, .mtgs-cost.mtgs-2g::before, .mtgs-cost.mtgs-2g::after, .mtgs-cost.mtgs-wup::before, .mtgs-cost.mtgs-wup::after, .mtgs-cost.mtgs-wbp::before, .mtgs-cost.mtgs-wbp::after, .mtgs-cost.mtgs-ubp::before, .mtgs-cost.mtgs-ubp::after, .mtgs-cost.mtgs-urp::before, .mtgs-cost.mtgs-urp::after, .mtgs-cost.mtgs-brp::before, .mtgs-cost.mtgs-brp::after, .mtgs-cost.mtgs-bgp::before, .mtgs-cost.mtgs-bgp::after, .mtgs-cost.mtgs-rwp::before, .mtgs-cost.mtgs-rwp::after, .mtgs-cost.mtgs-rgp::before, .mtgs-cost.mtgs-rgp::after, .mtgs-cost.mtgs-gwp::before, .mtgs-cost.mtgs-gwp::after, .mtgs-cost.mtgs-gup::before, .mtgs-cost.mtgs-gup::after {
+            font-size: 0.55em !important;
+            position: absolute;
+        }
+
+        .mtgs-cost.mtgs-wu::before, .mtgs-cost.mtgs-wb::before, .mtgs-cost.mtgs-ub::before, .mtgs-cost.mtgs-ur::before, .mtgs-cost.mtgs-br::before, .mtgs-cost.mtgs-bg::before, .mtgs-cost.mtgs-rw::before, .mtgs-cost.mtgs-rg::before, .mtgs-cost.mtgs-gw::before, .mtgs-cost.mtgs-gu::before, .mtgs-cost.mtgs-2w::before, .mtgs-cost.mtgs-2u::before, .mtgs-cost.mtgs-2b::before, .mtgs-cost.mtgs-2r::before, .mtgs-cost.mtgs-2g::before, .mtgs-cost.mtgs-wup::before, .mtgs-cost.mtgs-wbp::before, .mtgs-cost.mtgs-ubp::before, .mtgs-cost.mtgs-urp::before, .mtgs-cost.mtgs-brp::before, .mtgs-cost.mtgs-bgp::before, .mtgs-cost.mtgs-rwp::before, .mtgs-cost.mtgs-rgp::before, .mtgs-cost.mtgs-gwp::before, .mtgs-cost.mtgs-gup::before {
+            top: -0.38em;
+            left: 0.28em;
+        }
+
+        .mtgs-cost.mtgs-wu::after, .mtgs-cost.mtgs-wb::after, .mtgs-cost.mtgs-ub::after, .mtgs-cost.mtgs-ur::after, .mtgs-cost.mtgs-br::after, .mtgs-cost.mtgs-bg::after, .mtgs-cost.mtgs-rw::after, .mtgs-cost.mtgs-rg::after, .mtgs-cost.mtgs-gw::after, .mtgs-cost.mtgs-gu::after, .mtgs-cost.mtgs-2w::after, .mtgs-cost.mtgs-2u::after, .mtgs-cost.mtgs-2b::after, .mtgs-cost.mtgs-2r::after, .mtgs-cost.mtgs-2g::after, .mtgs-cost.mtgs-wup::after, .mtgs-cost.mtgs-wbp::after, .mtgs-cost.mtgs-ubp::after, .mtgs-cost.mtgs-urp::after, .mtgs-cost.mtgs-brp::after, .mtgs-cost.mtgs-bgp::after, .mtgs-cost.mtgs-rwp::after, .mtgs-cost.mtgs-rgp::after, .mtgs-cost.mtgs-gwp::after, .mtgs-cost.mtgs-gup::after {
+            top: 0.5em;
+            left: 1em;
+        }
+
+    .mtgs-cost.mtgs-wu, .mtgs-cost.mtgs-wup {
+        background: #edf2b0;
+        background: -moz-linear-gradient(-45deg, #edf2b0 0%, #edf2b0 50%, #a6c1dd 50%, #a6c1dd 100%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #edf2b0), color-stop(50%, #edf2b0), color-stop(50%, #a6c1dd), color-stop(100%, #a6c1dd));
+        background: -webkit-linear-gradient(-45deg, #edf2b0 0%, #edf2b0 50%, #a6c1dd 50%, #a6c1dd 100%);
+        background: -o-linear-gradient(-45deg, #edf2b0 0%, #edf2b0 50%, #a6c1dd 50%, #a6c1dd 100%);
+        background: -ms-linear-gradient(-45deg, #edf2b0 0%, #edf2b0 50%, #a6c1dd 50%, #a6c1dd 100%);
+        background: linear-gradient(135deg, #edf2b0 0%, #edf2b0 50%, #a6c1dd 50%, #a6c1dd 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#edf2b0", endColorstr="#a6c1dd",GradientType=1 );
+    }
+
+    .mtgs-cost.mtgs-wb, .mtgs-cost.mtgs-wbp {
+        background: #edf2b0;
+        background: -moz-linear-gradient(-45deg, #edf2b0 0%, #edf2b0 50%, #9c9188 50%, #9c9188 100%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #edf2b0), color-stop(50%, #edf2b0), color-stop(50%, #9c9188), color-stop(100%, #9c9188));
+        background: -webkit-linear-gradient(-45deg, #edf2b0 0%, #edf2b0 50%, #9c9188 50%, #9c9188 100%);
+        background: -o-linear-gradient(-45deg, #edf2b0 0%, #edf2b0 50%, #9c9188 50%, #9c9188 100%);
+        background: -ms-linear-gradient(-45deg, #edf2b0 0%, #edf2b0 50%, #9c9188 50%, #9c9188 100%);
+        background: linear-gradient(135deg, #edf2b0 0%, #edf2b0 50%, #9c9188 50%, #9c9188 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#edf2b0", endColorstr="#9c9188",GradientType=1 );
+    }
+
+    .mtgs-cost.mtgs-ub, .mtgs-cost.mtgs-ubp {
+        background: #a6c1dd;
+        background: -moz-linear-gradient(-45deg, #a6c1dd 0%, #a6c1dd 50%, #9c9188 50%, #9c9188 100%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #a6c1dd), color-stop(50%, #a6c1dd), color-stop(50%, #9c9188), color-stop(100%, #9c9188));
+        background: -webkit-linear-gradient(-45deg, #a6c1dd 0%, #a6c1dd 50%, #9c9188 50%, #9c9188 100%);
+        background: -o-linear-gradient(-45deg, #a6c1dd 0%, #a6c1dd 50%, #9c9188 50%, #9c9188 100%);
+        background: -ms-linear-gradient(-45deg, #a6c1dd 0%, #a6c1dd 50%, #9c9188 50%, #9c9188 100%);
+        background: linear-gradient(135deg, #a6c1dd 0%, #a6c1dd 50%, #9c9188 50%, #9c9188 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6c1dd", endColorstr="#9c9188",GradientType=1 );
+    }
+
+    .mtgs-cost.mtgs-ur, .mtgs-cost.mtgs-urp {
+        background: #a6c1dd;
+        background: -moz-linear-gradient(-45deg, #a6c1dd 0%, #a6c1dd 50%, #db8664 50%, #db8664 100%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #a6c1dd), color-stop(50%, #a6c1dd), color-stop(50%, #db8664), color-stop(100%, #db8664));
+        background: -webkit-linear-gradient(-45deg, #a6c1dd 0%, #a6c1dd 50%, #db8664 50%, #db8664 100%);
+        background: -o-linear-gradient(-45deg, #a6c1dd 0%, #a6c1dd 50%, #db8664 50%, #db8664 100%);
+        background: -ms-linear-gradient(-45deg, #a6c1dd 0%, #a6c1dd 50%, #db8664 50%, #db8664 100%);
+        background: linear-gradient(135deg, #a6c1dd 0%, #a6c1dd 50%, #db8664 50%, #db8664 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6c1dd", endColorstr="#db8664",GradientType=1 );
+    }
+
+    .mtgs-cost.mtgs-br, .mtgs-cost.mtgs-brp {
+        background: #aca29a;
+        background: -moz-linear-gradient(-45deg, #aca29a 0%, #aca29a 50%, #db8664 50%, #db8664 100%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #aca29a), color-stop(50%, #aca29a), color-stop(50%, #db8664), color-stop(100%, #db8664));
+        background: -webkit-linear-gradient(-45deg, #aca29a 0%, #aca29a 50%, #db8664 50%, #db8664 100%);
+        background: -o-linear-gradient(-45deg, #aca29a 0%, #aca29a 50%, #db8664 50%, #db8664 100%);
+        background: -ms-linear-gradient(-45deg, #aca29a 0%, #aca29a 50%, #db8664 50%, #db8664 100%);
+        background: linear-gradient(135deg, #aca29a 0%, #aca29a 50%, #db8664 50%, #db8664 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#aca29a", endColorstr="#db8664",GradientType=1 );
+    }
+
+    .mtgs-cost.mtgs-bg, .mtgs-cost.mtgs-bgp {
+        background: #aca29a;
+        background: -moz-linear-gradient(-45deg, #aca29a 0%, #aca29a 50%, #93b483 50%, #93b483 100%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #aca29a), color-stop(50%, #aca29a), color-stop(50%, #93b483), color-stop(100%, #93b483));
+        background: -webkit-linear-gradient(-45deg, #aca29a 0%, #aca29a 50%, #93b483 50%, #93b483 100%);
+        background: -o-linear-gradient(-45deg, #aca29a 0%, #aca29a 50%, #93b483 50%, #93b483 100%);
+        background: -ms-linear-gradient(-45deg, #aca29a 0%, #aca29a 50%, #93b483 50%, #93b483 100%);
+        background: linear-gradient(135deg, #aca29a 0%, #aca29a 50%, #93b483 50%, #93b483 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#aca29a", endColorstr="#93b483",GradientType=1 );
+    }
+
+    .mtgs-cost.mtgs-rw, .mtgs-cost.mtgs-rwp {
+        background: #db8664;
+        background: -moz-linear-gradient(-45deg, #db8664 0%, #db8664 50%, #edf2b0 50%, #edf2b0 100%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #db8664), color-stop(50%, #db8664), color-stop(50%, #edf2b0), color-stop(100%, #edf2b0));
+        background: -webkit-linear-gradient(-45deg, #db8664 0%, #db8664 50%, #edf2b0 50%, #edf2b0 100%);
+        background: -o-linear-gradient(-45deg, #db8664 0%, #db8664 50%, #edf2b0 50%, #edf2b0 100%);
+        background: -ms-linear-gradient(-45deg, #db8664 0%, #db8664 50%, #edf2b0 50%, #edf2b0 100%);
+        background: linear-gradient(135deg, #db8664 0%, #db8664 50%, #edf2b0 50%, #edf2b0 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#db8664", endColorstr="#edf2b0",GradientType=1 );
+    }
+
+    .mtgs-cost.mtgs-rg, .mtgs-cost.mtgs-rgp {
+        background: #db8664;
+        background: -moz-linear-gradient(-45deg, #db8664 0%, #db8664 50%, #93b483 50%, #93b483 100%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #db8664), color-stop(50%, #db8664), color-stop(50%, #93b483), color-stop(100%, #93b483));
+        background: -webkit-linear-gradient(-45deg, #db8664 0%, #db8664 50%, #93b483 50%, #93b483 100%);
+        background: -o-linear-gradient(-45deg, #db8664 0%, #db8664 50%, #93b483 50%, #93b483 100%);
+        background: -ms-linear-gradient(-45deg, #db8664 0%, #db8664 50%, #93b483 50%, #93b483 100%);
+        background: linear-gradient(135deg, #db8664 0%, #db8664 50%, #93b483 50%, #93b483 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#db8664", endColorstr="#93b483",GradientType=1 );
+    }
+
+    .mtgs-cost.mtgs-gw, .mtgs-cost.mtgs-gwp {
+        background: #93b483;
+        background: -moz-linear-gradient(-45deg, #93b483 0%, #93b483 50%, #edf2b0 50%, #edf2b0 100%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #93b483), color-stop(50%, #93b483), color-stop(50%, #edf2b0), color-stop(100%, #edf2b0));
+        background: -webkit-linear-gradient(-45deg, #93b483 0%, #93b483 50%, #edf2b0 50%, #edf2b0 100%);
+        background: -o-linear-gradient(-45deg, #93b483 0%, #93b483 50%, #edf2b0 50%, #edf2b0 100%);
+        background: -ms-linear-gradient(-45deg, #93b483 0%, #93b483 50%, #edf2b0 50%, #edf2b0 100%);
+        background: linear-gradient(135deg, #93b483 0%, #93b483 50%, #edf2b0 50%, #edf2b0 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#93b483", endColorstr="#edf2b0",GradientType=1 );
+    }
+
+    .mtgs-cost.mtgs-gu, .mtgs-cost.mtgs-gup {
+        background: #93b483;
+        background: -moz-linear-gradient(-45deg, #93b483 0%, #93b483 50%, #b5cde3 50%, #b5cde3 100%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #93b483), color-stop(50%, #93b483), color-stop(50%, #b5cde3), color-stop(100%, #b5cde3));
+        background: -webkit-linear-gradient(-45deg, #93b483 0%, #93b483 50%, #b5cde3 50%, #b5cde3 100%);
+        background: -o-linear-gradient(-45deg, #93b483 0%, #93b483 50%, #b5cde3 50%, #b5cde3 100%);
+        background: -ms-linear-gradient(-45deg, #93b483 0%, #93b483 50%, #b5cde3 50%, #b5cde3 100%);
+        background: linear-gradient(135deg, #93b483 0%, #93b483 50%, #b5cde3 50%, #b5cde3 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#93b483", endColorstr="#b5cde3",GradientType=1 );
+    }
+
+    .mtgs-cost.mtgs-2w {
+        background: #beb9b2;
+        background: -moz-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #edf2b0 50%, #edf2b0 100%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #beb9b2), color-stop(50%, #beb9b2), color-stop(50%, #edf2b0), color-stop(100%, #edf2b0));
+        background: -webkit-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #edf2b0 50%, #edf2b0 100%);
+        background: -o-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #edf2b0 50%, #edf2b0 100%);
+        background: -ms-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #edf2b0 50%, #edf2b0 100%);
+        background: linear-gradient(135deg, #beb9b2 0%, #beb9b2 50%, #edf2b0 50%, #edf2b0 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#beb9b2", endColorstr="#edf2b0",GradientType=1 );
+    }
+
+    .mtgs-cost.mtgs-2u {
+        background: #beb9b2;
+        background: -moz-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #b5cde3 50%, #b5cde3 100%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #beb9b2), color-stop(50%, #beb9b2), color-stop(50%, #b5cde3), color-stop(100%, #b5cde3));
+        background: -webkit-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #b5cde3 50%, #b5cde3 100%);
+        background: -o-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #b5cde3 50%, #b5cde3 100%);
+        background: -ms-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #b5cde3 50%, #b5cde3 100%);
+        background: linear-gradient(135deg, #beb9b2 0%, #beb9b2 50%, #b5cde3 50%, #b5cde3 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#beb9b2", endColorstr="#b5cde3",GradientType=1 );
+    }
+
+    .mtgs-cost.mtgs-2b {
+        background: #beb9b2;
+        background: -moz-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #9c9188 50%, #9c9188 100%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #beb9b2), color-stop(50%, #beb9b2), color-stop(50%, #9c9188), color-stop(100%, #9c9188));
+        background: -webkit-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #9c9188 50%, #9c9188 100%);
+        background: -o-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #9c9188 50%, #9c9188 100%);
+        background: -ms-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #9c9188 50%, #9c9188 100%);
+        background: linear-gradient(135deg, #beb9b2 0%, #beb9b2 50%, #9c9188 50%, #9c9188 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#beb9b2", endColorstr="#9c9188",GradientType=1 );
+    }
+
+    .mtgs-cost.mtgs-2r {
+        background: #beb9b2;
+        background: -moz-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #db8664 50%, #db8664 100%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #beb9b2), color-stop(50%, #beb9b2), color-stop(50%, #db8664), color-stop(100%, #db8664));
+        background: -webkit-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #db8664 50%, #db8664 100%);
+        background: -o-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #db8664 50%, #db8664 100%);
+        background: -ms-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #db8664 50%, #db8664 100%);
+        background: linear-gradient(135deg, #beb9b2 0%, #beb9b2 50%, #db8664 50%, #db8664 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#beb9b2", endColorstr="#db8664",GradientType=1 );
+    }
+
+    .mtgs-cost.mtgs-2g {
+        background: #beb9b2;
+        background: -moz-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #93b483 50%, #93b483 100%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #beb9b2), color-stop(50%, #beb9b2), color-stop(50%, #93b483), color-stop(100%, #93b483));
+        background: -webkit-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #93b483 50%, #93b483 100%);
+        background: -o-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #93b483 50%, #93b483 100%);
+        background: -ms-linear-gradient(-45deg, #beb9b2 0%, #beb9b2 50%, #93b483 50%, #93b483 100%);
+        background: linear-gradient(135deg, #beb9b2 0%, #beb9b2 50%, #93b483 50%, #93b483 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#beb9b2", endColorstr="#93b483",GradientType=1 );
+    }
+
+    .mtgs-cost.mtgs-p::before, .mtgs-cost.mtgs-wp::before, .mtgs-cost.mtgs-up::before, .mtgs-cost.mtgs-bp::before, .mtgs-cost.mtgs-rp::before, .mtgs-cost.mtgs-gp::before, .mtgs-cost.mtgs-wup::before, .mtgs-cost.mtgs-wbp::before, .mtgs-cost.mtgs-ubp::before, .mtgs-cost.mtgs-urp::before, .mtgs-cost.mtgs-brp::before, .mtgs-cost.mtgs-bgp::before, .mtgs-cost.mtgs-rwp::before, .mtgs-cost.mtgs-rgp::before, .mtgs-cost.mtgs-gwp::before, .mtgs-cost.mtgs-gup::before {
+        display: inline-block;
+        -moz-transform: scale(1.2, 1.2);
+        -webkit-transform: scale(1.2, 1.2);
+        transform: scale(1.2, 1.2);
+    }
+
+    .mtgs-cost.mtgs-tap-alt::before {
+        display: inline-block;
+        -moz-transform: scale(1.2, 1.2);
+        -webkit-transform: scale(1.2, 1.2);
+        transform: scale(1.2, 1.2);
+        padding-left: 0.06em;
+        padding-bottom: 0.1em;
+    }
+
+    .mtgs-cost.mtgs-s::before {
+        color: #fff;
+        -webkit-text-stroke: 2px #fff;
+        font-size: 0.85em;
+        top: -0.05em;
+        position: relative;
+        display: inline-block;
+    }
+
+    .mtgs-cost.mtgs-s::after {
+        content: "\e619";
+        position: absolute;
+        color: #333;
+        margin-left: -0.9em;
+        font-size: 1.1em;
+    }
+
+    .mtgs-cost.mtgs-s-mtga::before {
+        color: #fff;
+    }
+
+    .mtgs-cost.mtgs-untap {
+        background-color: #111;
+        color: #fff;
+    }
+
+    .mtgs-cost.mtgs-shadow {
+        box-shadow: -0.06em 0.07em 0 #111, 0 0.06em 0 #111;
+    }
+
+        .mtgs-cost.mtgs-shadow.mtgs-untap {
+            box-shadow: -0.06em 0.07em 0 #fff, 0 0.06em 0 #fff;
+        }
+
+.mtgs-split {
+    position: relative;
+    width: 1.3em;
+    height: 1.3em;
+}
+
+    .mtgs-split::before,
+    .mtgs-split::after {
+        font-size: 0.55em !important;
+        position: absolute;
+    }
+
+    .mtgs-split::before {
+        top: -0.38em;
+        left: 0.28em;
+    }
+
+    .mtgs-split::after {
+        top: 0.5em;
+        left: 1em;
+    }
+
+span.mtgs-half {
+    width: 0.675em;
+    overflow: hidden;
+    display: inline-block;
+    margin-left: 0.675em;
+}
+
+    span.mtgs-half > .mtgs-cost {
+        margin-left: -0.675em;
+    }
+
+.mtgs-half {
+    width: 0.675em;
+    margin-left: 0.675em;
+    overflow: hidden;
+    border-radius: 0 1em 1em 0;
+}
+
+    .mtgs-half::before {
+        margin-left: -0.65em;
+    }
+
+.mtgs-100 {
+    width: 2.4em;
+}
+
+.mtgs-1000000 {
+    width: 5.4em;
+}
+
+/**
+ * planeswalker and other loyalty symbols */
+.mtgs-loyalty-up, .mtgs-loyalty-down, .mtgs-loyalty-zero, .mtgs-loyalty-start {
+    color: #111;
+    font-size: 1.5em;
+    position: relative;
+    text-align: center;
+}
+
+.mtgs-loyalty-start {
+    font-size: 2em;
+}
+
+.mtgs-loyalty-zero::after {
+    line-height: 2.1em !important;
+}
+
+.mtgs-loyalty-0::after, .mtgs-loyalty-1::after, .mtgs-loyalty-2::after, .mtgs-loyalty-3::after, .mtgs-loyalty-4::after, .mtgs-loyalty-5::after, .mtgs-loyalty-6::after, .mtgs-loyalty-7::after, .mtgs-loyalty-8::after, .mtgs-loyalty-9::after, .mtgs-loyalty-10::after, .mtgs-loyalty-11::after, .mtgs-loyalty-12::after, .mtgs-loyalty-13::after, .mtgs-loyalty-14::after, .mtgs-loyalty-15::after, .mtgs-loyalty-16::after, .mtgs-loyalty-17::after, .mtgs-loyalty-18::after, .mtgs-loyalty-19::after, .mtgs-loyalty-20::after, .mtgs-loyalty-25::after, .mtgs-loyalty-x::after {
+    color: #fff;
+    display: inline-block;
+    font-size: 0.5em;
+    font-family: "MPlantin, Garamond, Palatino, 'Times New Roman', Times, serif";
+    position: absolute;
+    left: 0;
+    line-height: 2.25em;
+    width: 100%;
+    text-align: center;
+}
+
+.mtgs-loyalty-0::after {
+    content: "0";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-1::after {
+    content: "+1";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-2::after {
+    content: "+2";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-3::after {
+    content: "+3";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-4::after {
+    content: "+4";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-5::after {
+    content: "+5";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-6::after {
+    content: "+6";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-7::after {
+    content: "+7";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-8::after {
+    content: "+8";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-9::after {
+    content: "+9";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-10::after {
+    content: "+10";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-11::after {
+    content: "+10";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-12::after {
+    content: "+12";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-13::after {
+    content: "+13";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-14::after {
+    content: "+14";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-15::after {
+    content: "+15";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-16::after {
+    content: "+16";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-17::after {
+    content: "+17";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-18::after {
+    content: "+18";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-19::after {
+    content: "+19";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-20::after {
+    content: "+20";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-25::after {
+    content: "+25";
+}
+
+.mtgs-loyalty-up.mtgs-loyalty-x::after {
+    content: "+X";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-1::after {
+    content: "1";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-2::after {
+    content: "2";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-3::after {
+    content: "3";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-4::after {
+    content: "4";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-5::after {
+    content: "5";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-6::after {
+    content: "6";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-7::after {
+    content: "7";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-8::after {
+    content: "8";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-9::after {
+    content: "9";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-10::after {
+    content: "10";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-11::after {
+    content: "11";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-12::after {
+    content: "12";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-13::after {
+    content: "13";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-14::after {
+    content: "14";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-15::after {
+    content: "15";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-16::after {
+    content: "16";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-17::after {
+    content: "17";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-18::after {
+    content: "18";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-19::after {
+    content: "19";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-20::after {
+    content: "20";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-25::after {
+    content: "25";
+}
+
+.mtgs-loyalty-start.mtgs-loyalty-x::after {
+    content: "X";
+}
+
+.mtgs-loyalty-down::after {
+    line-height: 2em;
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-1::after {
+    content: "-1";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-2::after {
+    content: "-2";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-3::after {
+    content: "-3";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-4::after {
+    content: "-4";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-5::after {
+    content: "-5";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-6::after {
+    content: "-6";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-7::after {
+    content: "-7";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-8::after {
+    content: "-8";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-9::after {
+    content: "-9";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-10::after {
+    content: "-10";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-11::after {
+    content: "-11";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-12::after {
+    content: "-12";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-13::after {
+    content: "-13";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-14::after {
+    content: "-14";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-15::after {
+    content: "-15";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-16::after {
+    content: "-16";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-17::after {
+    content: "-17";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-18::after {
+    content: "-18";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-19::after {
+    content: "-19";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-20::after {
+    content: "-20";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-25::after {
+    content: "-25";
+}
+
+.mtgs-loyalty-down.mtgs-loyalty-x::after {
+    content: "-X";
+}
+
+.mtgs-loyalty-outline::before {
+    color: transparent;
+    -webkit-text-stroke: 0.03em #111;
+}
+
+.mtgs-loyalty-outline::after {
+    color: #111;
+}
+
+.mtgs-loyalty-outline.mtgs-loyalty-start {
+    font-size: 1.6em;
+}
+
+.mtgs-saga {
+    color: #111;
+}
+
+.mtgs-saga-1::after, .mtgs-saga-2::after, .mtgs-saga-3::after, .mtgs-saga-4::after, .mtgs-saga-5::after, .mtgs-saga-6::after {
+    color: #fff;
+    display: inline-block;
+    font-size: 0.6em;
+    font-family: "MPlantin, Garamond, Palatino, 'Times New Roman', Times, serif";
+    position: absolute;
+    left: 0;
+    line-height: 2em;
+    width: 100%;
+    text-align: center;
+}
+
+.mtgs-saga-1::after {
+    content: "I";
+}
+
+.mtgs-saga-2::after {
+    content: "II";
+}
+
+.mtgs-saga-3::after {
+    content: "III";
+}
+
+.mtgs-saga-4::after {
+    content: "IV";
+}
+
+.mtgs-saga-5::after {
+    content: "V";
+}
+
+.mtgs-saga-6::after {
+    content: "VI";
+}
+
+.mtgs-level > span {
+    font-size: 0.33em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #000;
+    font-family: "MPlantin, Garamond, Palatino, 'Times New Roman', Times, serif";
+    width: 76%;
+    text-align: center;
+    line-height: 3.8;
+}
+
+.mtgs-level::after {
+    color: rgba(0, 0, 0, 0.25);
+    display: block;
+    font-size: 1em;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.mtgs-defense {
+    color: #111;
+    font-size: 1.5em;
+    position: relative;
+    text-align: center;
+}
+
+.mtgs-defense-0::after, .mtgs-defense-1::after, .mtgs-defense-2::after, .mtgs-defense-3::after, .mtgs-defense-4::after, .mtgs-defense-5::after, .mtgs-defense-6::after, .mtgs-defense-7::after, .mtgs-defense-8::after, .mtgs-defense-9::after, .mtgs-defense-10::after, .mtgs-defense-11::after, .mtgs-defense-12::after, .mtgs-defense-13::after, .mtgs-defense-14::after, .mtgs-defense-15::after, .mtgs-defense-16::after, .mtgs-defense-17::after, .mtgs-defense-18::after, .mtgs-defense-19::after, .mtgs-defense-20::after, .mtgs-defense-25::after, .mtgs-defense-x::after {
+    color: #fff;
+    display: inline-block;
+    font-size: 0.5em;
+    font-family: "MPlantin, Garamond, Palatino, 'Times New Roman', Times, serif";
+    position: absolute;
+    left: 0;
+    line-height: 2.25em;
+    width: 100%;
+    text-align: center;
+}
+
+.mtgs-defense-0::after {
+    content: "0";
+}
+
+.mtgs-defense-1::after {
+    content: "1";
+}
+
+.mtgs-defense-2::after {
+    content: "2";
+}
+
+.mtgs-defense-3::after {
+    content: "3";
+}
+
+.mtgs-defense-4::after {
+    content: "4";
+}
+
+.mtgs-defense-5::after {
+    content: "5";
+}
+
+.mtgs-defense-6::after {
+    content: "6";
+}
+
+.mtgs-defense-7::after {
+    content: "7";
+}
+
+.mtgs-defense-8::after {
+    content: "8";
+}
+
+.mtgs-defense-9::after {
+    content: "9";
+}
+
+.mtgs-defense-10::after {
+    content: "10";
+}
+
+.mtgs-defense-11::after {
+    content: "11";
+}
+
+.mtgs-defense-12::after {
+    content: "12";
+}
+
+.mtgs-defense-13::after {
+    content: "13";
+}
+
+.mtgs-defense-14::after {
+    content: "14";
+}
+
+.mtgs-defense-15::after {
+    content: "15";
+}
+
+.mtgs-defense-16::after {
+    content: "16";
+}
+
+.mtgs-defense-17::after {
+    content: "17";
+}
+
+.mtgs-defense-18::after {
+    content: "18";
+}
+
+.mtgs-defense-19::after {
+    content: "19";
+}
+
+.mtgs-defense-20::after {
+    content: "20";
+}
+
+.mtgs-defense-25::after {
+    content: "25";
+}
+
+.mtgs-defense-outline::before {
+    content: "\e9d8";
+}
+
+.mtgs-defense-outline::after {
+    color: #111;
+}
+
+.mtgs-defense-print {
+    display: list-item;
+    list-style-position: inside;
+    width: 0.9em;
+}
+
+    .mtgs-defense-print::before {
+        color: #fff;
+        content: "\e9d8";
+        position: absolute;
+        left: 0;
+        top: 0;
+        text-shadow: 0 0 5px #333;
+    }
+
+    .mtgs-defense-print::marker {
+        content: "\e9d7";
+        color: #111;
+    }
+
+.mtgs-dfc {
+    color: #111;
+    border: 0.05em solid #111;
+    border-radius: 2em;
+    padding: 0.025em;
+}
+
+.mtgs-2x {
+    font-size: 1.75em;
+}
+
+.mtgs-3x {
+    font-size: 2.25em;
+}
+
+.mtgs-4x {
+    font-size: 3em;
+}
+
+.mtgs-5x {
+    font-size: 3.75em;
+}
+
+.mtgs-6x {
+    font-size: 4.5em;
+}
+
+/*
+ * Fixed width */
+.mtgs-fw {
+    width: 1em;
+    text-align: center;
+}
+
+.mtgs-duo {
+    color: #fff;
+}
+
+    .mtgs-duo::after {
+        color: #000;
+        content: "";
+        display: block;
+        font-size: 1em;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .mtgs-duo.mtgs-multicolor::after {
+        content: "\e986";
+    }
+
+    .mtgs-duo.mtgs-school-lorehold::after {
+        content: "\e99b";
+    }
+
+    .mtgs-duo.mtgs-school-prismari::after {
+        content: "\e99d";
+    }
+
+    .mtgs-duo.mtgs-school-quandrix::after {
+        content: "\e99f";
+    }
+
+    .mtgs-duo.mtgs-school-silverquill::after {
+        content: "\e9a1";
+    }
+
+    .mtgs-duo.mtgs-school-witherbloom::before {
+        content: "\e9a3";
+    }
+
+    .mtgs-duo.mtgs-school-witherbloom::after {
+        content: "\e9a4";
+    }
+
+.mtgs-duo-color::before {
+    color: #010101;
+}
+
+.mtgs-duo-color.mtgs-multicolor::after {
+    color: #cca753;
+}
+
+.mtgs-duo-color.mtgs-multicolor.mtgs-grad::after {
+    background: linear-gradient(45deg, #cca54f 0%, #e0d3bb 50%, #cca54f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mtgs-duo-color.mtgs-school-lorehold::before {
+    color: #a03731;
+}
+
+.mtgs-duo-color.mtgs-school-lorehold::after {
+    color: #e4e8c7;
+}
+
+.mtgs-duo-color.mtgs-school-prismari::before {
+    color: #a23431;
+}
+
+.mtgs-duo-color.mtgs-school-prismari::after {
+    color: #322f5c;
+}
+
+.mtgs-duo-color.mtgs-school-quandrix::before {
+    color: #352e5f;
+}
+
+.mtgs-duo-color.mtgs-school-quandrix::after {
+    color: #519e52;
+}
+
+.mtgs-duo-color.mtgs-school-silverquill::before {
+    color: #181616;
+}
+
+.mtgs-duo-color.mtgs-school-silverquill::after {
+    color: #e5e9ca;
+}
+
+.mtgs-duo-color.mtgs-school-witherbloom::before {
+    color: #2f312d;
+}
+
+.mtgs-duo-color.mtgs-school-witherbloom::after {
+    color: #4f9b4f;
+}
+
+.mtgs-ci {
+    border-radius: 100%;
+    box-shadow: inset 0 0 1px #fff;
+    line-height: 0.95em;
+    width: 1em;
+    height: 1em;
+}
+
+    .mtgs-ci::before {
+        color: #010101;
+    }
+
+.mtgs-ci-1::before {
+    content: "\e98a";
+}
+
+.mtgs-ci-2::before {
+    content: "\e98b";
+}
+
+.mtgs-ci-3::before {
+    content: "\e98c";
+}
+
+.mtgs-ci-4::before {
+    content: "\e98d";
+}
+
+.mtgs-ci-5::before {
+    content: "\e98e";
+}
+
+.mtgs-ci-w {
+    background: #fff;
+}
+
+.mtgs-ci-u {
+    background: #3b6ba0;
+}
+
+.mtgs-ci-b {
+    background: #383431;
+}
+
+.mtgs-ci-r {
+    background: #c6553e;
+}
+
+.mtgs-ci-g {
+    background: #3d684b;
+}
+
+.mtgs-ci-wu, .mtgs-ci-uw, .mtgs-ci-azorius {
+    background: conic-gradient(#fff 45deg, #3b6ba0 45deg 225deg, #fff 225deg);
+}
+
+.mtgs-ci-wb, .mtgs-ci-bw, .mtgs-ci-orzhov {
+    background: conic-gradient(#fff 45deg, #383431 45deg 225deg, #fff 225deg);
+}
+
+.mtgs-ci-ub, .mtgs-ci-bu, .mtgs-ci-dimir {
+    background: conic-gradient(#3b6ba0 45deg, #383431 45deg 225deg, #3b6ba0 225deg);
+}
+
+.mtgs-ci-ur, .mtgs-ci-ru, .mtgs-ci-izzet {
+    background: conic-gradient(#3b6ba0 45deg, #c6553e 45deg 225deg, #3b6ba0 225deg);
+}
+
+.mtgs-ci-bg, .mtgs-ci-gb, .mtgs-ci-golgari, .mtgs-ci-rock {
+    background: conic-gradient(#383431 45deg, #3d684b 45deg 225deg, #383431 225deg);
+}
+
+.mtgs-ci-br, .mtgs-ci-rb, .mtgs-ci-rakdos {
+    background: conic-gradient(#383431 45deg, #c6553e 45deg 225deg, #383431 225deg);
+}
+
+.mtgs-ci-rw, .mtgs-ci-wr, .mtgs-ci-boros {
+    background: conic-gradient(#c6553e 45deg, #fff 45deg 225deg, #c6553e 225deg);
+}
+
+.mtgs-ci-rg, .mtgs-ci-gr, .mtgs-ci-gruul {
+    background: conic-gradient(#c6553e 45deg, #3d684b 45deg 225deg, #c6553e 225deg);
+}
+
+.mtgs-ci-gu, .mtgs-ci-ug, .mtgs-ci-simic {
+    background: conic-gradient(#3d684b 45deg, #3b6ba0 45deg 225deg, #3d684b 225deg);
+}
+
+.mtgs-ci-gw, .mtgs-ci-wg, .mtgs-ci-selesnya {
+    background: conic-gradient(#3d684b 45deg, #fff 45deg 225deg, #3d684b 225deg);
+}
+
+.mtgs-ci-wug, .mtgs-ci-wgu, .mtgs-ci-ugw, .mtgs-ci-uwg, .mtgs-ci-gwu, .mtgs-ci-guw, .mtgs-ci-bant {
+    background: conic-gradient(#3b6ba0 60deg, #3d684b 60deg 180deg, #fff 180deg 300deg, #3b6ba0 300deg);
+}
+
+.mtgs-ci-ubw, .mtgs-ci-uwb, .mtgs-ci-buw, .mtgs-ci-bwu, .mtgs-ci-wub, .mtgs-ci-wbu, .mtgs-ci-esper {
+    background: conic-gradient(#383431 60deg, #fff 60deg 180deg, #3b6ba0 180deg 300deg, #383431 300deg);
+}
+
+.mtgs-ci-bru, .mtgs-ci-bur, .mtgs-ci-rbu, .mtgs-ci-rub, .mtgs-ci-ubr, .mtgs-ci-urb, .mtgs-ci-grixis {
+    background: conic-gradient(#c6553e 60deg, #3b6ba0 60deg 180deg, #383431 180deg 300deg, #c6553e 300deg);
+}
+
+.mtgs-ci-rgb, .mtgs-ci-rbg, .mtgs-ci-grb, .mtgs-ci-gbr, .mtgs-ci-brg, .mtgs-ci-bgr, .mtgs-ci-jund {
+    background: conic-gradient(#3d684b 60deg, #383431 60deg 180deg, #c6553e 180deg 300deg, #3d684b 300deg);
+}
+
+.mtgs-ci-gwr, .mtgs-ci-grw, .mtgs-ci-wgr, .mtgs-ci-wrg, .mtgs-ci-rgw, .mtgs-ci-rwg, .mtgs-ci-naya {
+    background: conic-gradient(#fff 60deg, #c6553e 60deg 180deg, #3d684b 180deg 300deg, #fff 300deg);
+}
+
+.mtgs-ci-wbg, .mtgs-ci-wgb, .mtgs-ci-bwg, .mtgs-ci-bgw, .mtgs-ci-gwb, .mtgs-ci-gbw, .mtgs-ci-abzan, .mtgs-ci-junk, .mtgs-ci-necra {
+    background: conic-gradient(#383431 60deg, #3d684b 60deg 180deg, #fff 180deg 300deg, #383431 300deg);
+}
+
+.mtgs-ci-urw, .mtgs-ci-uwr, .mtgs-ci-ruw, .mtgs-ci-rwu, .mtgs-ci-wur, .mtgs-ci-wru, .mtgs-ci-jeskai, .mtgs-ci-raka {
+    background: conic-gradient(#c6553e 60deg, #fff 60deg 180deg, #3b6ba0 180deg 300deg, #c6553e 300deg);
+}
+
+.mtgs-ci-bgu, .mtgs-ci-bug, .mtgs-ci-gbu, .mtgs-ci-gub, .mtgs-ci-ubg, .mtgs-ci-ugb, .mtgs-ci-sultai, .mtgs-ci-bug, .mtgs-ci-ana {
+    background: conic-gradient(#3d684b 60deg, #3b6ba0 60deg 180deg, #383431 180deg 300deg, #3d684b 300deg);
+}
+
+.mtgs-ci-rwb, .mtgs-ci-rbw, .mtgs-ci-wrb, .mtgs-ci-wbr, .mtgs-ci-brw, .mtgs-ci-bwr, .mtgs-ci-mardu, .mtgs-ci-dega {
+    background: conic-gradient(#fff 60deg, #383431 60deg 180deg, #c6553e 180deg 300deg, #fff 300deg);
+}
+
+.mtgs-ci-gur, .mtgs-ci-gru, .mtgs-ci-ugr, .mtgs-ci-urg, .mtgs-ci-rgu, .mtgs-ci-rug, .mtgs-ci-temur, .mtgs-ci-ceta {
+    background: conic-gradient(#3b6ba0 60deg, #c6553e 60deg 180deg, #3d684b 180deg 300deg, #3b6ba0 300deg);
+}
+
+.mtgs-ci-ubrg, .mtgs-ci-ubgr, .mtgs-ci-ugbr, .mtgs-ci-ugrb, .mtgs-ci-urbg, .mtgs-ci-urgb, .mtgs-ci-bgru, .mtgs-ci-bgur, .mtgs-ci-brgu, .mtgs-ci-brug, .mtgs-ci-bugr, .mtgs-ci-burg, .mtgs-ci-gbru, .mtgs-ci-gbur, .mtgs-ci-grbu, .mtgs-ci-grub, .mtgs-ci-gubr, .mtgs-ci-gurb, .mtgs-ci-rbgu, .mtgs-ci-rbug, .mtgs-ci-rgbu, .mtgs-ci-rgub, .mtgs-ci-rubg, .mtgs-ci-rugb, .mtgs-ci-glint {
+    background: conic-gradient(#3b6ba0 45deg, #383431 45deg 135deg, #c6553e 135deg 225deg, #3d684b 225deg 315deg, #3b6ba0 315deg);
+}
+
+.mtgs-ci-brgw, .mtgs-ci-bgrw, .mtgs-ci-bgwr, .mtgs-ci-brwg, .mtgs-ci-bwgr, .mtgs-ci-bwrg, .mtgs-ci-gbrw, .mtgs-ci-gbwr, .mtgs-ci-grbw, .mtgs-ci-grwb, .mtgs-ci-gwbr, .mtgs-ci-gwrb, .mtgs-ci-rbgw, .mtgs-ci-rbwg, .mtgs-ci-rgbw, .mtgs-ci-rgwb, .mtgs-ci-rwbg, .mtgs-ci-rwgb, .mtgs-ci-wbgr, .mtgs-ci-wbrg, .mtgs-ci-wgbr, .mtgs-ci-wgrb, .mtgs-ci-wrbg, .mtgs-ci-wrgb, .mtgs-ci-dune {
+    background: conic-gradient(#383431 45deg, #c6553e 45deg 135deg, #3d684b 135deg 225deg, #fff 225deg 315deg, #383431 315deg);
+}
+
+.mtgs-ci-rgwu, .mtgs-ci-gruw, .mtgs-ci-grwu, .mtgs-ci-gurw, .mtgs-ci-guwr, .mtgs-ci-gwru, .mtgs-ci-gwur, .mtgs-ci-rguw, .mtgs-ci-rugw, .mtgs-ci-ruwg, .mtgs-ci-rwgu, .mtgs-ci-rwug, .mtgs-ci-ugrw, .mtgs-ci-ugwr, .mtgs-ci-urgw, .mtgs-ci-urwg, .mtgs-ci-uwgr, .mtgs-ci-uwrg, .mtgs-ci-wgru, .mtgs-ci-wgur, .mtgs-ci-wrgu, .mtgs-ci-wrug, .mtgs-ci-wugr, .mtgs-ci-wurg, .mtgs-ci-ink {
+    background: conic-gradient(#c6553e 45deg, #3d684b 45deg 135deg, #fff 135deg 225deg, #3b6ba0 225deg 315deg, #c6553e 315deg);
+}
+
+.mtgs-ci-gwub, .mtgs-ci-bguw, .mtgs-ci-bgwu, .mtgs-ci-bugw, .mtgs-ci-buwg, .mtgs-ci-bwgu, .mtgs-ci-bwug, .mtgs-ci-gbuw, .mtgs-ci-gbwu, .mtgs-ci-gubw, .mtgs-ci-guwb, .mtgs-ci-gwbu, .mtgs-ci-ubgw, .mtgs-ci-ubwg, .mtgs-ci-ugbw, .mtgs-ci-ugwb, .mtgs-ci-uwbg, .mtgs-ci-uwgb, .mtgs-ci-wbgu, .mtgs-ci-wbug, .mtgs-ci-wgbu, .mtgs-ci-wgub, .mtgs-ci-wubg, .mtgs-ci-wugb, .mtgs-ci-witch {
+    background: conic-gradient(#3d684b 45deg, #fff 45deg 135deg, #3b6ba0 135deg 225deg, #383431 225deg 315deg, #3d684b 315deg);
+}
+
+.mtgs-ci-wubr, .mtgs-ci-bruw, .mtgs-ci-brwu, .mtgs-ci-burw, .mtgs-ci-buwr, .mtgs-ci-bwru, .mtgs-ci-bwur, .mtgs-ci-rbuw, .mtgs-ci-rbwu, .mtgs-ci-rubw, .mtgs-ci-ruwb, .mtgs-ci-rwbu, .mtgs-ci-rwub, .mtgs-ci-ubrw, .mtgs-ci-ubwr, .mtgs-ci-urbw, .mtgs-ci-urwb, .mtgs-ci-uwbr, .mtgs-ci-uwrb, .mtgs-ci-wbru, .mtgs-ci-wbur, .mtgs-ci-wrbu, .mtgs-ci-wrub, .mtgs-ci-wurb, .mtgs-ci-yore {
+    background: conic-gradient(#fff 45deg, #3b6ba0 45deg 135deg, #383431 135deg 225deg, #c6553e 225deg 315deg, #fff 315deg);
+}
+
+.mtgs-ci-wubrg, .mtgs-ci-rugbw, .mtgs-ci-rugwb, .mtgs-ci-ruwbg, .mtgs-ci-ruwgb, .mtgs-ci-rwbgu, .mtgs-ci-rwbug, .mtgs-ci-rwgbu, .mtgs-ci-rwgub, .mtgs-ci-rwubg, .mtgs-ci-rwugb, .mtgs-ci-ubgrw, .mtgs-ci-ubgwr, .mtgs-ci-ubrgw, .mtgs-ci-ubrwg, .mtgs-ci-ubwgr, .mtgs-ci-ubwrg, .mtgs-ci-ugbrw, .mtgs-ci-ugbwr, .mtgs-ci-ugrbw, .mtgs-ci-ugrwb, .mtgs-ci-ugwbr, .mtgs-ci-ugwrb, .mtgs-ci-urbgw, .mtgs-ci-urbwg, .mtgs-ci-urgbw, .mtgs-ci-urgwb, .mtgs-ci-urwbg, .mtgs-ci-urwgb, .mtgs-ci-uwbgr, .mtgs-ci-uwbrg, .mtgs-ci-uwgbr, .mtgs-ci-uwgrb, .mtgs-ci-uwrbg, .mtgs-ci-uwrgb, .mtgs-ci-wbgru, .mtgs-ci-wbgur, .mtgs-ci-wbrgu, .mtgs-ci-wbrug, .mtgs-ci-wbugr, .mtgs-ci-wburg, .mtgs-ci-wgbru, .mtgs-ci-wgbur, .mtgs-ci-wgrbu, .mtgs-ci-wgrub, .mtgs-ci-wgubr, .mtgs-ci-wgurb, .mtgs-ci-wrbgu, .mtgs-ci-wrbug, .mtgs-ci-wrgbu, .mtgs-ci-wrgub, .mtgs-ci-wrubg, .mtgs-ci-wrugb, .mtgs-ci-wubgr, .mtgs-ci-wugbr, .mtgs-ci-wugrb, .mtgs-ci-wurbg, .mtgs-ci-wurgb, .mtgs-ci-bgruw, .mtgs-ci-bgrwu, .mtgs-ci-bgurw, .mtgs-ci-bguwr, .mtgs-ci-bgwru, .mtgs-ci-bgwur, .mtgs-ci-brguw, .mtgs-ci-brgwu, .mtgs-ci-brugw, .mtgs-ci-bruwg, .mtgs-ci-brwgu, .mtgs-ci-brwug, .mtgs-ci-bugrw, .mtgs-ci-bugwr, .mtgs-ci-burgw, .mtgs-ci-burwg, .mtgs-ci-buwgr, .mtgs-ci-buwrg, .mtgs-ci-bwgru, .mtgs-ci-bwgur, .mtgs-ci-bwrgu, .mtgs-ci-bwrug, .mtgs-ci-bwugr, .mtgs-ci-bwurg, .mtgs-ci-gbruw, .mtgs-ci-gbrwu, .mtgs-ci-gburw, .mtgs-ci-gbuwr, .mtgs-ci-gbwru, .mtgs-ci-gbwur, .mtgs-ci-grbuw, .mtgs-ci-grbwu, .mtgs-ci-grubw, .mtgs-ci-gruwb, .mtgs-ci-grwbu, .mtgs-ci-grwub, .mtgs-ci-gubrw, .mtgs-ci-gubwr, .mtgs-ci-gurbw, .mtgs-ci-gurwb, .mtgs-ci-guwbr, .mtgs-ci-guwrb, .mtgs-ci-gwbru, .mtgs-ci-gwbur, .mtgs-ci-gwrbu, .mtgs-ci-gwrub, .mtgs-ci-gwubr, .mtgs-ci-gwurb, .mtgs-ci-rbguw, .mtgs-ci-rbgwu, .mtgs-ci-rbugw, .mtgs-ci-rbuwg, .mtgs-ci-rbwgu, .mtgs-ci-rbwug, .mtgs-ci-rgbuw, .mtgs-ci-rgbwu, .mtgs-ci-rgubw, .mtgs-ci-rguwb, .mtgs-ci-rgwbu, .mtgs-ci-rgwub, .mtgs-ci-rubgw, .mtgs-ci-rubwg, .mtgs-ci-5 {
+    background: conic-gradient(#fff 36deg, #3b6ba0 36deg 108deg, #383431 108deg 180deg, #c6553e 180deg 252deg, #3d684b 252deg 324deg, #fff 324deg);
+}
+
+.mtgs-mechanic {
+    background: linear-gradient(0deg, #c8913b 0%, #ecc65a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*# sourceMappingURL=mana.css.map */
