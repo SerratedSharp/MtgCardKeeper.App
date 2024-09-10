@@ -1,11 +1,18 @@
 ﻿div.mtgc-card {
-    height: 450px;
-    max-height: 450px
+    /*height: 450px;
+    max-height: 450px*/
+    background-color: transparent;
+
+}
+
+.art{
+    z-index:-1;
+    max-height:530px;
 }
 
 .mtgc-header {
     backdrop-filter: /*blur(2px)*/ contrast(0.4) brightness(180%);
-    z-index: 1000;
+    z-index: 5;
 
     &>div
     {

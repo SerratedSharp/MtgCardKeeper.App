@@ -1,6 +1,6 @@
 {
-  "name": "MTG Card Keeper",
-  "short_name": "MTG Crd Kpr",
+  "name": "MtgCardKeeper.BlazorWasm",
+  "short_name": "MtgCardKeeper.BlazorWasm",
   "id": "./",
   "start_url": "./",
   "display": "standalone",

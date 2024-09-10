@@ -1187,23 +1187,28 @@
 
     .mtgs-cost.mtgs-wu, .mtgs-cost.mtgs-wb, .mtgs-cost.mtgs-ub, .mtgs-cost.mtgs-ur, .mtgs-cost.mtgs-br, .mtgs-cost.mtgs-bg, .mtgs-cost.mtgs-rw, .mtgs-cost.mtgs-rg, .mtgs-cost.mtgs-gw, .mtgs-cost.mtgs-gu, .mtgs-cost.mtgs-2w, .mtgs-cost.mtgs-2u, .mtgs-cost.mtgs-2b, .mtgs-cost.mtgs-2r, .mtgs-cost.mtgs-2g, .mtgs-cost.mtgs-wup, .mtgs-cost.mtgs-wbp, .mtgs-cost.mtgs-ubp, .mtgs-cost.mtgs-urp, .mtgs-cost.mtgs-brp, .mtgs-cost.mtgs-bgp, .mtgs-cost.mtgs-rwp, .mtgs-cost.mtgs-rgp, .mtgs-cost.mtgs-gwp, .mtgs-cost.mtgs-gup {
         position: relative;
-        width: 1.3em;
-        height: 1.3em;
+  /*      width: 1.3em;
+        height: 1.3em;*/
     }
 
+    /* Two and three color combinations.  Both the ::before and :: after icons */
         .mtgs-cost.mtgs-wu::before, .mtgs-cost.mtgs-wu::after, .mtgs-cost.mtgs-wb::before, .mtgs-cost.mtgs-wb::after, .mtgs-cost.mtgs-ub::before, .mtgs-cost.mtgs-ub::after, .mtgs-cost.mtgs-ur::before, .mtgs-cost.mtgs-ur::after, .mtgs-cost.mtgs-br::before, .mtgs-cost.mtgs-br::after, .mtgs-cost.mtgs-bg::before, .mtgs-cost.mtgs-bg::after, .mtgs-cost.mtgs-rw::before, .mtgs-cost.mtgs-rw::after, .mtgs-cost.mtgs-rg::before, .mtgs-cost.mtgs-rg::after, .mtgs-cost.mtgs-gw::before, .mtgs-cost.mtgs-gw::after, .mtgs-cost.mtgs-gu::before, .mtgs-cost.mtgs-gu::after, .mtgs-cost.mtgs-2w::before, .mtgs-cost.mtgs-2w::after, .mtgs-cost.mtgs-2u::before, .mtgs-cost.mtgs-2u::after, .mtgs-cost.mtgs-2b::before, .mtgs-cost.mtgs-2b::after, .mtgs-cost.mtgs-2r::before, .mtgs-cost.mtgs-2r::after, .mtgs-cost.mtgs-2g::before, .mtgs-cost.mtgs-2g::after, .mtgs-cost.mtgs-wup::before, .mtgs-cost.mtgs-wup::after, .mtgs-cost.mtgs-wbp::before, .mtgs-cost.mtgs-wbp::after, .mtgs-cost.mtgs-ubp::before, .mtgs-cost.mtgs-ubp::after, .mtgs-cost.mtgs-urp::before, .mtgs-cost.mtgs-urp::after, .mtgs-cost.mtgs-brp::before, .mtgs-cost.mtgs-brp::after, .mtgs-cost.mtgs-bgp::before, .mtgs-cost.mtgs-bgp::after, .mtgs-cost.mtgs-rwp::before, .mtgs-cost.mtgs-rwp::after, .mtgs-cost.mtgs-rgp::before, .mtgs-cost.mtgs-rgp::after, .mtgs-cost.mtgs-gwp::before, .mtgs-cost.mtgs-gwp::after, .mtgs-cost.mtgs-gup::before, .mtgs-cost.mtgs-gup::after {
             font-size: 0.55em !important;
-            position: absolute;
+            position: relative;
         }
 
         .mtgs-cost.mtgs-wu::before, .mtgs-cost.mtgs-wb::before, .mtgs-cost.mtgs-ub::before, .mtgs-cost.mtgs-ur::before, .mtgs-cost.mtgs-br::before, .mtgs-cost.mtgs-bg::before, .mtgs-cost.mtgs-rw::before, .mtgs-cost.mtgs-rg::before, .mtgs-cost.mtgs-gw::before, .mtgs-cost.mtgs-gu::before, .mtgs-cost.mtgs-2w::before, .mtgs-cost.mtgs-2u::before, .mtgs-cost.mtgs-2b::before, .mtgs-cost.mtgs-2r::before, .mtgs-cost.mtgs-2g::before, .mtgs-cost.mtgs-wup::before, .mtgs-cost.mtgs-wbp::before, .mtgs-cost.mtgs-ubp::before, .mtgs-cost.mtgs-urp::before, .mtgs-cost.mtgs-brp::before, .mtgs-cost.mtgs-bgp::before, .mtgs-cost.mtgs-rwp::before, .mtgs-cost.mtgs-rgp::before, .mtgs-cost.mtgs-gwp::before, .mtgs-cost.mtgs-gup::before {
-            top: -0.38em;
-            left: 0.28em;
+            /*top: -0.38em;
+            left: 0.28em;*/
+            top: -0.75em;
+            left: 0.08em;
         }
 
         .mtgs-cost.mtgs-wu::after, .mtgs-cost.mtgs-wb::after, .mtgs-cost.mtgs-ub::after, .mtgs-cost.mtgs-ur::after, .mtgs-cost.mtgs-br::after, .mtgs-cost.mtgs-bg::after, .mtgs-cost.mtgs-rw::after, .mtgs-cost.mtgs-rg::after, .mtgs-cost.mtgs-gw::after, .mtgs-cost.mtgs-gu::after, .mtgs-cost.mtgs-2w::after, .mtgs-cost.mtgs-2u::after, .mtgs-cost.mtgs-2b::after, .mtgs-cost.mtgs-2r::after, .mtgs-cost.mtgs-2g::after, .mtgs-cost.mtgs-wup::after, .mtgs-cost.mtgs-wbp::after, .mtgs-cost.mtgs-ubp::after, .mtgs-cost.mtgs-urp::after, .mtgs-cost.mtgs-brp::after, .mtgs-cost.mtgs-bgp::after, .mtgs-cost.mtgs-rwp::after, .mtgs-cost.mtgs-rgp::after, .mtgs-cost.mtgs-gwp::after, .mtgs-cost.mtgs-gup::after {
-            top: 0.5em;
-            left: 1em;
+            /*top: 0.5em;
+            left: 1em;*/
+            top: 0.1em;
+            left: -0.2em;
         }
 
     .mtgs-cost.mtgs-wu, .mtgs-cost.mtgs-wup {
