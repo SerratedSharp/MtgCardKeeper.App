@@ -561,7 +561,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-pR4sOIgH5SRMZiRM\/COifiuNXOY4rM\/r1e59SypJk54=",
+      "hash": "sha256-L4Iog\/8Q7vCulqxiVR8zTEV2PtTkODRGKZSCj55UWE8=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -725,7 +725,7 @@
       "url": "_framework\/MtgCardKeeper.RclViews.wasm"
     },
     {
-      "hash": "sha256-\/MJc0KMaVcRZJH565n6DLscxjbH\/HEshx28eDi+mWQw=",
+      "hash": "sha256-UZ+hKawCr\/3VpJ8\/iSTtDFBd6ZOPCnd3P7eUX7U9xMI=",
       "url": "_framework\/MtgCardKeeper.WasmShared.wasm"
     },
     {
@@ -1333,5 +1333,5 @@
       "url": "_content\/MtgCardKeeper.RclViews\/tester.js"
     }
   ],
-  "version": "eSU7BIES"
+  "version": "m2bObQIP"
 };
