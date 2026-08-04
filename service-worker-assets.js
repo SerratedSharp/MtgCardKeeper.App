@@ -1314,7 +1314,7 @@ self.assetsManifest = {
       "url": "images/mtg-card-back.jpg"
     },
     {
-      "hash": "sha256-JB5bSLM22++P8+5bto2gwl3xyiJ85mQz35JQERih7hw=",
+      "hash": "sha256-p6RsmKQSvaP/BywnkDHmKWADiN45/urr9+SzXmgbIfk=",
       "url": "index.html"
     },
     {
