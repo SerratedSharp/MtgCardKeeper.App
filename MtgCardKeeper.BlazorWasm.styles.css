@@ -1,11 +1,566 @@
 @import '_content/Blazor.Bootstrap/Blazor.Bootstrap.bundle.scp.css';
 
+/* /Cards/CardImagePreviewModal.razor.rz.scp.css */
+.card-image-preview-modal-close[b-ixpq1uukzq] {
+
+    position: absolute;
+
+    top: 0.45rem;
+
+    right: 0.45rem;
+
+    z-index: 2;
+
+    width: 2rem;
+
+    height: 2rem;
+
+    padding: 0;
+
+    opacity: 1;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.92);
+
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 3l10 10M13 3L3 13' stroke='%23212529' stroke-width='2.25' stroke-linecap='round'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    background-size: 1.15rem;
+
+    filter: none;
+
+}
+
+
+
+.card-image-preview-modal-close:hover[b-ixpq1uukzq],
+
+.card-image-preview-modal-close:focus[b-ixpq1uukzq] {
+
+    opacity: 1;
+
+    background-color: #fff;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+
+}
+
+
+
+.card-image-preview-modal-img[b-ixpq1uukzq] {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* /Cards/CardOverlayControls.razor.rz.scp.css */
+/* Full-bleed overlay host only — quadrant layout / button chrome use Bootstrap in the markup. */
+.card-overlay-controls[b-kh2yvkflwd] {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+}
+
+/* Between Bootstrap pt-4 (1.5rem) and pt-5 (3rem). */
+.card-overlay-quadrant-top[b-kh2yvkflwd] {
+    padding-top: 2.5rem;
+}
+
+/* Keep class for reveal CSS; clicks must work when the overlay is shown. */
+.card-overlay-btn[b-kh2yvkflwd] {
+    pointer-events: auto;
+}
+
+/* Generic deck-back flip: same behavior, slightly subdued chrome vs distinct Scryfall back faces. */
+.card-overlay-btn-flip-default[b-kh2yvkflwd] {
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+    color: #adb5bd;
+}
+/* /Cards/CardSearchControls.razor.rz.scp.css */
+.search-input-wrap[b-6yqqaee4zv] {
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.search-input-invalid[b-6yqqaee4zv] {
+    border-color: var(--bs-danger);
+}
+
+.search-parse-error-icon[b-6yqqaee4zv] {
+    position: absolute;
+    right: 0.55rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--bs-danger);
+    font-size: 1rem;
+    line-height: 1;
+    z-index: 5;
+    cursor: help;
+}
+
+.search-filters-body[b-6yqqaee4zv] {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1;
+}
+
+.search-filters-primary[b-6yqqaee4zv] {
+    flex-shrink: 0;
+}
+
+.search-filters-advanced[b-6yqqaee4zv] {
+    min-height: 0;
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 0.5rem;
+}
+
+.filter-toggle-row[b-6yqqaee4zv] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.filter-pip[b-6yqqaee4zv] {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    border: 1px solid var(--bs-border-color);
+    background: transparent;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 1;
+}
+
+.filter-pip:hover[b-6yqqaee4zv] {
+    border-color: var(--bs-secondary-color);
+    background: transparent;
+}
+
+.filter-pip.active[b-6yqqaee4zv] {
+    border-color: var(--bs-warning);
+    background: transparent;
+    box-shadow: 0 0 0 2px rgba(var(--bs-warning-rgb), 0.45);
+}
+
+.filter-pip-cmc[b-6yqqaee4zv] {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.filter-pip .mtgs[b-6yqqaee4zv] {
+    font-size: 1.15rem;
+}
+
+.filter-pip-gold-dot[b-6yqqaee4zv] {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ffe9a8, #d4a017 55%, #8a6a0a);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
+}
+
+.filter-pip-match-all.active .filter-pip-gold-dot[b-6yqqaee4zv] {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35), 0 0 6px rgba(212, 160, 23, 0.85);
+}
+
+/* Offcanvas is a child component — pierce scoped CSS */
+[b-6yqqaee4zv] .search-filters-offcanvas .offcanvas-body {
+    max-height: 85vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+[b-6yqqaee4zv] .search-filters-offcanvas .offcanvas-header {
+    align-items: center;
+}
+
+.search-filters-header[b-6yqqaee4zv] {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.search-filters-clear-btn[b-6yqqaee4zv] {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.filter-chip[b-6yqqaee4zv] {
+    border: 1px solid var(--bs-border-color);
+    background: transparent;
+    color: inherit;
+    border-radius: 0.4rem;
+    padding: 0.35rem 0.65rem;
+    text-align: left;
+}
+
+.filter-chip:hover[b-6yqqaee4zv] {
+    border-color: var(--bs-secondary-color);
+    background: transparent;
+}
+
+.filter-chip.active[b-6yqqaee4zv] {
+    border-color: var(--bs-warning);
+    background: transparent;
+    box-shadow: 0 0 0 1px rgba(var(--bs-warning-rgb), 0.4);
+}
+
+.rarity-grid[b-6yqqaee4zv] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.35rem;
+}
+
+.formats-grid[b-6yqqaee4zv] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.35rem;
+    max-height: 14rem;
+    overflow-y: auto;
+}
+
+.advanced-section-header[b-6yqqaee4zv] {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--bs-border-color);
+    background: transparent;
+    color: inherit;
+    border-radius: 0.4rem;
+    padding: 0.45rem 0.65rem;
+    font-weight: 600;
+}
+
+.advanced-section-header:hover[b-6yqqaee4zv] {
+    border-color: var(--bs-secondary-color);
+    background: transparent;
+}
+
+.advanced-section-body[b-6yqqaee4zv] {
+    margin-top: 0.5rem;
+}
+
+.sets-scroll[b-6yqqaee4zv] {
+    max-height: 14rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.set-chip[b-6yqqaee4zv] {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.set-chip-name[b-6yqqaee4zv] {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 /* /Cards/CardSummaryList.razor.rz.scp.css */
-.my-component[b-l2xiba3uvs] {
-    border: 2px dashed red;
-    padding: 1em;
-    margin: 1em 0;
-    background-image: url('background.png');
+/* Overlay visibility: .is-overlay-revealed on at most one tile (hover wins over sticky click). */
+
+.card-tile[b-l2xiba3uvs]  .card-overlay-controls {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.card-tile[b-l2xiba3uvs]  .card-overlay-btn {
+    pointer-events: none;
+}
+
+.card-tile.is-overlay-revealed[b-l2xiba3uvs]  .card-overlay-controls {
+    opacity: 1;
+}
+
+.card-tile.is-overlay-revealed[b-l2xiba3uvs]  .card-overlay-btn {
+    pointer-events: auto;
+}
+
+.card-face-img[b-l2xiba3uvs] {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-tile-image-btn[b-l2xiba3uvs] {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    line-height: 0;
+    cursor: zoom-in;
+}
+
+.card-tile-image-btn-art[b-l2xiba3uvs] {
+    position: absolute;
+    top: var(--mtgc-title-band);
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: var(--mtgc-art-height);
+}
+
+/* Beat global `div.mtgc-card.mtgc-constructed .art` (absolute + title-band top).
+   Without this, art is offset again inside the positioned button → white gap under title. */
+[b-l2xiba3uvs] .mtgc-constructed .card-tile-image-btn-art .art {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Stabilize Virtualize row ItemSize estimates (.NET 8 assumes uniform heights). */
+.cardSummaryList .card-tile[b-l2xiba3uvs] {
+    min-height: 300px;
+}
+/* /Cards/CardSummaryTable.razor.rz.scp.css */
+.card-summary-list[b-ba1coxos9a] {
+    --card-summary-list-cols: 2.5rem minmax(6rem, 1.4fr) minmax(2.5rem, auto) minmax(5rem, 1.1fr) minmax(3rem, auto) minmax(2.5rem, auto) 4.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0 0.25rem 0.5rem;
+}
+
+.card-summary-list-header-card[b-ba1coxos9a],
+.card-summary-list-row[b-ba1coxos9a] {
+    display: grid;
+    grid-template-columns: var(--card-summary-list-cols);
+    column-gap: 0.65rem;
+    row-gap: 0.35rem;
+    align-items: start;
+    padding: 0.45rem 0.6rem;
+}
+
+.card-summary-list-header-card[b-ba1coxos9a] {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: var(--bs-body-bg);
+    margin-bottom: 0.15rem;
+}
+
+.card-summary-list-header-mobile-legend[b-ba1coxos9a] {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.75rem;
+    padding-top: 0.15rem;
+    border-top: 1px solid rgba(var(--bs-border-color-rgb), 0.55);
+}
+
+.card-summary-list-label[b-ba1coxos9a] {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--bs-secondary-color);
+    line-height: 1.2;
+}
+
+.card-summary-list-row[b-ba1coxos9a] {
+    background: var(--bs-body-bg);
+    min-height: 3.25rem;
+}
+
+.card-summary-list-row:hover[b-ba1coxos9a] {
+    background: rgba(var(--bs-emphasis-color-rgb), 0.035);
+}
+
+.card-summary-list-cell[b-ba1coxos9a] {
+    min-width: 0;
+}
+
+.card-summary-list-cell-image[b-ba1coxos9a] {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 0.1rem;
+}
+
+.card-summary-list-thumb[b-ba1coxos9a] {
+    width: 2.25rem;
+    height: auto;
+    display: block;
+    border-radius: 0.2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+}
+
+.card-summary-list-thumb-btn[b-ba1coxos9a] {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    line-height: 0;
+    cursor: zoom-in;
+}
+
+.card-summary-list-thumb-btn:hover .card-summary-list-thumb[b-ba1coxos9a],
+.card-summary-list-thumb-btn:focus-visible .card-summary-list-thumb[b-ba1coxos9a] {
+    box-shadow: 0 0 0 2px var(--bs-primary), 0 2px 8px rgba(0, 0, 0, 0.28);
+}
+
+.card-summary-list-thumb-btn:focus-visible[b-ba1coxos9a] {
+    outline: none;
+}
+
+.card-summary-list-value[b-ba1coxos9a] {
+    display: block;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.card-summary-list-cell-actions[b-ba1coxos9a] {
+    display: flex;
+    align-items: flex-start;
+    justify-content: stretch;
+}
+
+.card-summary-list-cell-actions .btn[b-ba1coxos9a] {
+    white-space: nowrap;
+}
+
+.card-summary-list-header-mobile-legend[b-ba1coxos9a] {
+    display: none;
+}
+
+/* Compact mobile: thumb + name + action on top row; meta + type stack below */
+@media (max-width: 575.98px) {
+    .card-summary-list[b-ba1coxos9a] {
+        --card-summary-list-cols: 2.25rem minmax(0, 1fr) 3.75rem;
+        gap: 0.4rem;
+        padding: 0 0.15rem 0.5rem;
+    }
+
+    .card-summary-list-header-card[b-ba1coxos9a],
+    .card-summary-list-row[b-ba1coxos9a] {
+        column-gap: 0.45rem;
+        padding: 0.4rem 0.45rem;
+    }
+
+    .card-summary-list-header-card .card-summary-list-cell-mana[b-ba1coxos9a],
+    .card-summary-list-header-card .card-summary-list-cell-type[b-ba1coxos9a],
+    .card-summary-list-header-card .card-summary-list-cell-set[b-ba1coxos9a],
+    .card-summary-list-header-card .card-summary-list-cell-rarity[b-ba1coxos9a] {
+        display: none;
+    }
+
+    .card-summary-list-header-mobile-legend[b-ba1coxos9a] {
+        display: flex;
+    }
+
+    .card-summary-list-row .card-summary-list-cell-mana[b-ba1coxos9a],
+    .card-summary-list-row .card-summary-list-cell-type[b-ba1coxos9a],
+    .card-summary-list-row .card-summary-list-cell-set[b-ba1coxos9a],
+    .card-summary-list-row .card-summary-list-cell-rarity[b-ba1coxos9a] {
+        grid-column: 1 / -1;
+        padding-left: 2.7rem;
+    }
+
+    .card-summary-list-row .card-summary-list-cell-mana[b-ba1coxos9a] {
+        grid-row: 2;
+    }
+
+    .card-summary-list-row .card-summary-list-cell-type[b-ba1coxos9a] {
+        grid-row: 3;
+    }
+
+    .card-summary-list-row .card-summary-list-cell-set[b-ba1coxos9a] {
+        grid-row: 4;
+    }
+
+    .card-summary-list-row .card-summary-list-cell-rarity[b-ba1coxos9a] {
+        grid-row: 5;
+    }
+
+    .card-summary-list-row .card-summary-list-cell-name[b-ba1coxos9a] {
+        align-self: center;
+    }
+
+    .card-summary-list-row .card-summary-list-cell-actions[b-ba1coxos9a] {
+        align-self: center;
+    }
+
+    .card-summary-list-value[b-ba1coxos9a] {
+        font-size: 0.85rem;
+    }
+}
+/* /Collection/CollectionToastHost.razor.rz.scp.css */
+.collection-toast-host[b-jsqe0pblde] {
+    position: fixed;
+    z-index: 1080;
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    right: calc(1rem + env(safe-area-inset-right, 0px));
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+    width: min(22rem, calc(100vw - 2rem));
+    pointer-events: none;
+}
+
+.collection-toast-host .collection-toast[b-jsqe0pblde] {
+    pointer-events: auto;
+    width: 100%;
+    background-color: var(--bs-body-bg, #fff);
+    border: 1px solid var(--bs-border-color-translucent, rgba(0, 0, 0, 0.175));
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.collection-toast-host .collection-toast-error[b-jsqe0pblde] {
+    background-color: var(--bs-danger, #dc3545);
+    border-color: var(--bs-danger, #dc3545);
+    color: #fff;
+}
+
+.collection-toast-host .collection-toast-error .btn-close[b-jsqe0pblde] {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.collection-toast-body-btn[b-jsqe0pblde] {
+    cursor: default;
+}
+
+@media (max-width: 767.98px) {
+    .collection-toast-host[b-jsqe0pblde] {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: calc(100vw - 2rem);
+        max-width: 28rem;
+    }
 }
 /* /Layout/MainLayout.razor.rz.scp.css */
 .top-row[b-7vl5ja0ygw] {

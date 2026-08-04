@@ -1,0 +1,14 @@
+﻿/* Replacements of default BS classes */
+
+/* scope all redefines to .rd to allow opt-in when desired */
+
+:root
+{
+    --bs-warning-fg-rgb: 200, 100, 0;
+}
+
+.rd .text-warning
+{
+    color: rgb(var(--bs-warning-rgb));
+}
+

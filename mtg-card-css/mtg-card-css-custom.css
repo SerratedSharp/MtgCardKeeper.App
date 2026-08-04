@@ -5,6 +5,64 @@
 
 }
 
+/* Constructed (HTML) face: pin art to a fixed top so wrapping titles overlay instead of shifting the frame. */
+div.mtgc-card.mtgc-constructed {
+    --mtgc-title-band: 1.75rem;
+    --mtgc-art-height: 130px;
+    --mtgc-type-band: 1.5rem;
+    position: relative;
+}
+
+div.mtgc-card.mtgc-constructed .art {
+    position: absolute;
+    top: var(--mtgc-title-band);
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: var(--mtgc-art-height);
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
+}
+
+div.mtgc-card.mtgc-constructed .mtgc-header-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+}
+
+div.mtgc-card.mtgc-constructed .mtgc-art-frame {
+    position: absolute;
+    top: var(--mtgc-title-band);
+    left: 0;
+    right: 0;
+    height: var(--mtgc-art-height);
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+div.mtgc-card.mtgc-constructed .mtgc-art-frame .card-img-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+div.mtgc-card.mtgc-constructed .mtgc-header-type {
+    position: absolute;
+    top: calc(var(--mtgc-title-band) + var(--mtgc-art-height));
+    left: 0;
+    right: 0;
+    z-index: 5;
+}
+
+div.mtgc-card.mtgc-constructed .mtgc-text-body {
+    margin-top: calc(var(--mtgc-title-band) + var(--mtgc-art-height) + var(--mtgc-type-band));
+    position: relative;
+    z-index: 2;
+}
+
 .art{
     z-index:-1;
     max-height:530px;
@@ -82,4 +140,3 @@
     border-radius: 10px / 20px;
    
 }
-

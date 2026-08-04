@@ -1,4 +1,46 @@
 
+/* BlazorBootstrap Modal chrome is outside CardImagePreviewModal scoped CSS ancestry.
+   Size to Scryfall PNG (744×1040); shrink with the viewport.
+   Bootstrap has no utility between xs and sm (576px); center until a narrower custom breakpoint. */
+.card-image-preview-modal {
+    --bs-modal-width: 744px;
+    width: min(744px, 100%);
+    max-width: min(744px, 100%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-image-preview-modal.card-image-preview-modal-compact {
+    --bs-modal-width: 26rem;
+    width: min(26rem, 100%);
+    max-width: min(26rem, 100%);
+}
+
+@media (max-width: 399.98px) {
+    .card-image-preview-modal {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.card-image-preview-modal .modal-content {
+    overflow: hidden;
+    border: 0;
+    border-radius: 21px;
+    background: transparent;
+}
+
+.card-image-preview-modal .modal-header {
+    display: none;
+}
+
+.card-image-preview-modal .modal-footer {
+    display: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    min-height: 0;
+}
 
 /* error bar at bottom, initially hidden  */
 #blazor-error-ui {
