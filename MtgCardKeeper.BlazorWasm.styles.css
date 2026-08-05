@@ -340,8 +340,17 @@
 }
 
 /* Stabilize Virtualize row ItemSize estimates (.NET 8 assumes uniform heights). */
+.cardSummaryList .row > .col[b-l2xiba3uvs] {
+    align-self: flex-start;
+}
+
 .cardSummaryList .card-tile[b-l2xiba3uvs] {
-    min-height: 300px;
+    min-height: 250px;
+}
+
+/* Image-only tiles: size to the card face, not a stretched row sibling. */
+.cardSummaryList .card-tile > .mtgc-card:not(.mtgc-constructed)[b-l2xiba3uvs] {
+    height: auto;
 }
 /* /Cards/CardSummaryTable.razor.rz.scp.css */
 .card-summary-list[b-ba1coxos9a] {

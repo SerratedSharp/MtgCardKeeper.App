@@ -1,12 +1,12 @@
 window.mtgCardKeeper = window.mtgCardKeeper || {};
 
-/** Bootstrap 5 breakpoints matching CardSummaryList row-cols-1/sm-2/md-3/lg-4/xl-6. */
+/** Tile grid column counts: 1 below 400px, then Bootstrap md/lg/xl (768/992/1200). */
 window.mtgCardKeeper.getBootstrapColumnCount = function () {
     const w = window.innerWidth;
     if (w >= 1200) return 6; // xl
     if (w >= 992) return 4;  // lg
     if (w >= 768) return 3;  // md
-    if (w >= 576) return 2;  // sm
+    if (w >= 400) return 2;  // custom (below Bootstrap sm)
     return 1;
 };
 

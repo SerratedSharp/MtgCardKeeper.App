@@ -1,7 +1,7 @@
 self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-eKFe72uMW5lCYyezjelNDiXFe4gFGM9eAdD+VJLPOg8=",
+      "hash": "sha256-9S3OomWHE8xOHdFv72S\/e9FWUGiyd2pX3Ml0Ww74xMo=",
       "url": "MtgCardKeeper.BlazorWasm.styles.css"
     },
     {
@@ -517,7 +517,7 @@ self.assetsManifest = {
       "url": "js\/card-search-controls.js"
     },
     {
-      "hash": "sha256-zcWtWkSOKcT3+oR8xITY9T7UZMFP9K3R6KvwjThuGX4=",
+      "hash": "sha256-gmHTrcAXTIa+mQXidcG\/jSiMNc1aXgdy9jXNkXgsQ10=",
       "url": "js\/card-summary-list.js"
     },
     {
@@ -609,7 +609,7 @@ self.assetsManifest = {
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-XmpYPKp2i8ny2QNVjwaV2AiJotcamesxmElDzMSGXZM=",
+      "hash": "sha256-RRhYRq2jrjWBqHCOpZoivraON7WUHmElFFuDCBNy1e0=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -617,7 +617,7 @@ self.assetsManifest = {
       "url": "_framework\/dotnet.native.8.0.29.vhri5d1kn0.js"
     },
     {
-      "hash": "sha256-EM9RHVDPevdJYntifqwwoCZ1448ZKJO9\/P1d1nUzbpI=",
+      "hash": "sha256-v38rO\/U0Xu4keyb+mA+RoBnL1ZyqTe8ThIcz8ry8K0E=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -773,15 +773,15 @@ self.assetsManifest = {
       "url": "_framework\/Microsoft.Win32.SystemEvents.wasm"
     },
     {
-      "hash": "sha256-XYV04nT6MAfL6Ku7AGe8AqP3vIeMJ+G6iXnk\/Aw4+DI=",
+      "hash": "sha256-agcV9RGOHLW+i3VHzkM\/gTp5Q99I\/qxEegxk0HtEPII=",
       "url": "_framework\/MtgCardKeeper.BlazorWasm.wasm"
     },
     {
-      "hash": "sha256-pTuRUtrWpIa8spK0534iLyeZ7SF4pCZ8ZT4wZRzUR58=",
+      "hash": "sha256-FwXC4s9botfXP66KTeRQ\/kRiEje\/aTrEpZvfppp\/Na8=",
       "url": "_framework\/MtgCardKeeper.RclViews.wasm"
     },
     {
-      "hash": "sha256-Qt7W2UW0SyrEkjkXRmvVSEIage2vi2+X3GjiAXWuUlc=",
+      "hash": "sha256-aT4DsS5jOoXj98mzQwVOh6ILyFA2pyaxSgHZo52lrHs=",
       "url": "_framework\/MtgCardKeeper.WasmShared.wasm"
     },
     {
@@ -1389,5 +1389,5 @@ self.assetsManifest = {
       "url": "_content\/MtgCardKeeper.RclViews\/tester.js"
     }
   ],
-  "version": "28guH0hM"
+  "version": "Z3X4Cxb4"
 };
