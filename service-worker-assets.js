@@ -525,7 +525,7 @@ self.assetsManifest = {
       "url": "js\/collection-toasts.js"
     },
     {
-      "hash": "sha256-d5VupQbqt1M0VdM3EFCrGNaYpa\/K\/XDKCMRiH3SKtHM=",
+      "hash": "sha256-b\/YbKwUcrvQb0jWqk62fbN8M6Cr31DwHZteIWydkHdU=",
       "url": "js\/GoogleIntegration.js"
     },
     {
@@ -613,7 +613,7 @@ self.assetsManifest = {
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-mFvRkko8RHkU5xDXt2mPH7iHIEUapcJnUtJ2l\/W2dwA=",
+      "hash": "sha256-iW0D5hpA3xTo1f1kANL1EJXHALP1WeQKNE+1UwjqBcI=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -621,7 +621,7 @@ self.assetsManifest = {
       "url": "_framework\/dotnet.native.8.0.29.vhri5d1kn0.js"
     },
     {
-      "hash": "sha256-x33JzAaKQDju5otv6iA9RxoZbCJDi6q6wJXuzAvp57A=",
+      "hash": "sha256-JlzYGrbIhnN5pd0hqmG0T74Y9ivASqTpuWL4u5q91z8=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -777,15 +777,15 @@ self.assetsManifest = {
       "url": "_framework\/Microsoft.Win32.SystemEvents.wasm"
     },
     {
-      "hash": "sha256-QklAxUULpab2nJcm+9pbWyziTebzoGAkhyqwwhjWTBI=",
+      "hash": "sha256-L9aagNwO3X+sUK+VJWEfI4SYOY4VDVA0fkIbsG6L4qE=",
       "url": "_framework\/MtgCardKeeper.BlazorWasm.wasm"
     },
     {
-      "hash": "sha256-4IGjp9c4dUrkYFpUxyZ4HDLtyb3RpTOkiuxgqP1Szvo=",
+      "hash": "sha256-oJCVcN3man9GjDBH9wPgVZB+Wh3HtDqFZI8E7C71kro=",
       "url": "_framework\/MtgCardKeeper.RclViews.wasm"
     },
     {
-      "hash": "sha256-YIHAYpdvqncG5BOZEoF3KWPHIY6wSHMvLIbr8iRlAr0=",
+      "hash": "sha256-FXe8DFZVrPSms2NmQZu03rNs98t\/mfi2dqtG3yV1ijA=",
       "url": "_framework\/MtgCardKeeper.WasmShared.wasm"
     },
     {
@@ -997,7 +997,7 @@ self.assetsManifest = {
       "url": "_framework\/System.ObjectModel.wasm"
     },
     {
-      "hash": "sha256-mvOcaZ\/QfBKpl\/gk1LMHoXiaEe5ivSlL5aTEQPH7lV0=",
+      "hash": "sha256-QzBN9+CXRZ2BKaVC+yzHwI1YpTMtJP+qoPcQnMYX2oc=",
       "url": "_framework\/System.Private.CoreLib.wasm"
     },
     {
@@ -1393,5 +1393,5 @@ self.assetsManifest = {
       "url": "_content\/MtgCardKeeper.RclViews\/tester.js"
     }
   ],
-  "version": "v58Hegk0"
+  "version": "cJ0xdUPu"
 };

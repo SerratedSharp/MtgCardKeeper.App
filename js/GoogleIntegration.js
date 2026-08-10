@@ -19,6 +19,8 @@ const DRIVE_APPDATA_SCOPE = 'https://www.googleapis.com/auth/drive.appdata';
 const GOOGLE_ACCOUNT_SCOPES = `${DRIVE_APPDATA_SCOPE} openid email profile`;
 const GOOGLE_IDENTITY_PROFILE_KEY = 'google_identity_profile';
 const GOOGLE_DRIVE_PROFILE_KEY = 'google_drive_account_profile';
+const DRIVE_FILE_ID_CACHE_KEY = 'mtg_drive_appdata_file_ids';
+const DRIVE_FILE_ID_CACHE_VERSION = 1;
 let driveFlushDotNetRef = null;
 let driveFlushHooksRegistered = false;
 let signInUiDotNetRef = null;
@@ -33,9 +35,79 @@ let driveTokenSilentRefreshInFlight = false;
 /** Staged Drive upload payload for departure keepalive (immutable per revision). */
 const KEEPALIVE_ELIGIBLE_MAX_BYTES = 55 * 1024;
 let stagedDriveUpload = null; // { bytes:Uint8Array, revisionId, rawBytes, keepaliveEligible, filename }
-let driveFileIdCache = Object.create(null); // filename -> fileId, scoped by account via clear on auth change
+/** In-memory filename -> fileId; hydrated from account-scoped localStorage. */
+let driveFileIdCache = Object.create(null);
+/** Account key (sub or normalized email) for the current in-memory map. */
+let driveFileIdCacheOwnerKey = null;
 let departureUploadInFlightRevisionId = null;
 let beforeUnloadArmed = false;
+
+const DRIVE_SYNC_TRACE_KEY = 'mtg_drive_sync_trace';
+const DRIVE_SYNC_TRACE_MAX = 200;
+
+function summarizeStagedDriveUpload() {
+    if (!stagedDriveUpload?.bytes?.length)
+        return null;
+
+    const filename = stagedDriveUpload.filename || 'UserInventories.mempack';
+    return {
+        revisionId: stagedDriveUpload.revisionId || null,
+        gzipBytes: stagedDriveUpload.bytes.length,
+        keepaliveEligible: !!stagedDriveUpload.keepaliveEligible,
+        hasCachedFileId: !!driveFileIdCache[filename],
+        hasToken: !!window.getDriveAppDataAccessToken?.(),
+        beforeUnloadArmed,
+        departureInFlight: departureUploadInFlightRevisionId || null,
+    };
+}
+
+/**
+ * Ring-buffer trace for Drive sync lifecycle (debounce, visibility, keepalive, open reconcile).
+ * Survives same-origin navigation via sessionStorage. Dump with dumpDriveSyncTrace().
+ */
+window.driveSyncTrace = function (eventName, detail) {
+    const entry = {
+        t: new Date().toISOString(),
+        perfMs: typeof performance !== 'undefined' ? Math.round(performance.now()) : 0,
+        event: eventName,
+        detail: detail ?? null,
+    };
+    console.log(`[DriveSyncLifecycle] ${eventName}`, detail ?? '');
+    try {
+        const raw = sessionStorage.getItem(DRIVE_SYNC_TRACE_KEY);
+        const arr = raw ? JSON.parse(raw) : [];
+        arr.push(entry);
+        while (arr.length > DRIVE_SYNC_TRACE_MAX)
+            arr.shift();
+        sessionStorage.setItem(DRIVE_SYNC_TRACE_KEY, JSON.stringify(arr));
+    } catch (e) {
+        // sessionStorage may be unavailable in rare privacy modes.
+    }
+    return entry;
+};
+
+window.dumpDriveSyncTrace = function (label) {
+    try {
+        const raw = sessionStorage.getItem(DRIVE_SYNC_TRACE_KEY);
+        const arr = raw ? JSON.parse(raw) : [];
+        const heading = label ? `[DriveSyncLifecycle] trace (${label})` : '[DriveSyncLifecycle] trace';
+        console.log(`${heading} — ${arr.length} entries`);
+        if (arr.length > 0)
+            console.table(arr);
+        return arr;
+    } catch (e) {
+        console.warn('dumpDriveSyncTrace failed', e);
+        return [];
+    }
+};
+
+window.clearDriveSyncTrace = function () {
+    try {
+        sessionStorage.removeItem(DRIVE_SYNC_TRACE_KEY);
+    } catch (e) {
+        // ignore
+    }
+};
 
 const SIGN_IN_TIMEOUT_MS = 120_000;
 const DRIVE_TOKEN_REFRESH_LEAD_MS = 5 * 60 * 1000;
@@ -44,12 +116,17 @@ const DRIVE_TOKEN_REFRESH_RETRY_MS = 5 * 60 * 1000;
 
 window.initializeGoogleSignIn = function () {
     console.log('initializing Google identity and Drive authorization');
+    if (!window.google?.accounts?.id) {
+        console.warn('Google Identity Services is not ready; will retry when Manage Data opens again');
+        return false;
+    }
+
     google.accounts.id.initialize({
         client_id: '6798099740-midqj6n38lhvbpg28mken7v7kvgg1al1.apps.googleusercontent.com',
         callback: handleCredentialResponse
     });
 
-    for (const id of ['googleSigninButton', 'googleSigninButtonFooter']) {
+    for (const id of ['googleSigninButton', 'googleSigninButtonFooter', 'googleSigninButtonRequired']) {
         const container = document.getElementById(id);
         if (!container)
             continue;
@@ -68,7 +145,11 @@ window.initializeGoogleSignIn = function () {
 
     // Drive authorization stays on a separate native click so Chrome preserves
     // transient user activation for the OAuth consent popup.
-    for (const id of ['googleDriveConnectButton', 'googleDriveConnectButtonFooter']) {
+    for (const id of [
+        'googleDriveConnectButton',
+        'googleDriveConnectButtonFooter',
+        'googleDriveConnectButtonRequired'
+    ]) {
         const button = document.getElementById(id);
         if (!button)
             continue;
@@ -89,6 +170,8 @@ window.initializeGoogleSignIn = function () {
                 });
         };
     }
+
+    return true;
 };
 
 function handleCredentialResponse(response) {
@@ -110,11 +193,32 @@ function handleCredentialResponse(response) {
     ensureTokenClientInitialized(identityProfile.email || null);
 
     const driveProfile = getStoredGoogleDriveProfile();
-    const sameDriveAccount = window.hasDriveAppDataToken()
-        && profilesRepresentSameAccount(identityProfile, driveProfile);
     const accountLabel = identityProfile.email || identityProfile.name || null;
+    const hasDriveToken = window.hasDriveAppDataToken();
 
-    if (sameDriveAccount) {
+    // Keep a valid Drive token when the drive profile is missing; clear only on
+    // a confirmed identity vs Drive account mismatch.
+    if (hasDriveToken)
+    {
+        if (driveProfile && profilesRepresentSameAccount(identityProfile, driveProfile))
+        {
+            notifySignInUi(
+                'success',
+                `Signed in as ${accountLabel}. Google Drive sync is ready.`,
+                accountLabel);
+            return;
+        }
+
+        if (driveProfile && !profilesRepresentSameAccount(identityProfile, driveProfile))
+        {
+            clearStoredDriveAuthorization();
+            notifySignInUi(
+                'identity',
+                `Signed in as ${accountLabel}. Connect this account to Google Drive.`,
+                accountLabel);
+            return;
+        }
+
         notifySignInUi(
             'success',
             `Signed in as ${accountLabel}. Google Drive sync is ready.`,
@@ -122,7 +226,6 @@ function handleCredentialResponse(response) {
         return;
     }
 
-    clearStoredDriveAuthorization();
     notifySignInUi(
         'identity',
         `Signed in as ${accountLabel}. Connect this account to Google Drive.`,
@@ -339,6 +442,7 @@ window.initializeGoogleDriveTokenRefresh = function () {
         driveTokenRefreshHooksRegistered = true;
     }
 
+    hydrateDriveFileIdCacheForCurrentAccount();
     scheduleDriveTokenRefresh();
 };
 
@@ -588,7 +692,7 @@ function clearStoredDriveAuthorization() {
     localStorage.removeItem('access_token_response');
     localStorage.removeItem(GOOGLE_DRIVE_PROFILE_KEY);
     localStorage.removeItem('google_account_profile');
-    driveFileIdCache = Object.create(null);
+    clearPersistedDriveFileIdCache();
     stagedDriveUpload = null;
     departureUploadInFlightRevisionId = null;
     beforeUnloadArmed = false;
@@ -601,6 +705,7 @@ async function fetchAndStoreGoogleDriveProfile(token) {
             { headers: { 'Authorization': 'Bearer ' + token } });
         if (!response.ok) {
             console.warn('Could not load Google account profile', response.status);
+            hydrateDriveFileIdCacheForCurrentAccount();
             return getProfileLabel(getStoredGoogleDriveProfile());
         }
 
@@ -611,9 +716,11 @@ async function fetchAndStoreGoogleDriveProfile(token) {
             name: profile.name || null
         };
         localStorage.setItem(GOOGLE_DRIVE_PROFILE_KEY, JSON.stringify(storedProfile));
+        hydrateDriveFileIdCacheForCurrentAccount();
         return getProfileLabel(storedProfile);
     } catch (error) {
         console.warn('Could not load Google account profile', error);
+        hydrateDriveFileIdCacheForCurrentAccount();
         return getProfileLabel(getStoredGoogleDriveProfile());
     }
 }
@@ -655,11 +762,183 @@ window.hasDriveAppDataToken = function () {
     return true;
 };
 
+/** Structured auth snapshot for Blazor UI (identity vs Drive appData). */
+window.getGoogleDriveAuthSnapshot = function () {
+    const tokenResponse = getAccessTokenResponse();
+    const identityProfile = getStoredGoogleIdentityProfile();
+    const driveProfile = getStoredGoogleDriveProfile();
+    const driveConnected = window.hasDriveAppDataToken();
+    const identitySelected = !!identityProfile;
+    const tokenExpired = !!(tokenResponse?.access_token && isTokenExpired(tokenResponse));
+    const accountLabel = driveConnected
+        ? (getProfileLabel(driveProfile) || getProfileLabel(identityProfile))
+        : getProfileLabel(identityProfile);
+
+    return {
+        driveConnected,
+        identitySelected,
+        accountLabel,
+        tokenExpired
+    };
+};
+
 window.getDriveAppDataAccessToken = function () {
     if (!window.hasDriveAppDataToken())
         return null;
     return getAccessTokenResponse()?.access_token ?? null;
 };
+
+window.clearStoredDriveAuthorization = clearStoredDriveAuthorization;
+
+function getDriveAccountCacheKey(profile) {
+    if (!profile)
+        return null;
+    if (typeof profile.sub === 'string' && profile.sub.length > 0)
+        return profile.sub;
+    if (typeof profile.email === 'string' && profile.email.length > 0)
+        return profile.email.trim().toLowerCase();
+    return null;
+}
+
+function readPersistedDriveFileIdRecord() {
+    try {
+        const raw = localStorage.getItem(DRIVE_FILE_ID_CACHE_KEY);
+        if (!raw)
+            return null;
+        const parsed = JSON.parse(raw);
+        if (!parsed || parsed.version !== DRIVE_FILE_ID_CACHE_VERSION)
+            return null;
+        if (typeof parsed.ownerKey !== 'string' || !parsed.ownerKey)
+            return null;
+        if (!parsed.files || typeof parsed.files !== 'object')
+            return null;
+        return parsed;
+    } catch {
+        return null;
+    }
+}
+
+function writePersistedDriveFileIdRecord(ownerKey, files) {
+    if (!ownerKey)
+        return;
+    try {
+        localStorage.setItem(DRIVE_FILE_ID_CACHE_KEY, JSON.stringify({
+            version: DRIVE_FILE_ID_CACHE_VERSION,
+            ownerKey,
+            files: files || Object.create(null),
+        }));
+    } catch {
+        // localStorage may be unavailable
+    }
+}
+
+function clearPersistedDriveFileIdCache() {
+    driveFileIdCache = Object.create(null);
+    driveFileIdCacheOwnerKey = null;
+    try {
+        localStorage.removeItem(DRIVE_FILE_ID_CACHE_KEY);
+    } catch {
+        // ignore
+    }
+}
+
+/**
+ * Hydrate in-memory filename→fileId map from localStorage when the stored
+ * owner matches the current Drive account profile.
+ */
+function hydrateDriveFileIdCacheForCurrentAccount() {
+    const profile = getStoredGoogleDriveProfile();
+    const ownerKey = getDriveAccountCacheKey(profile);
+    if (!ownerKey) {
+        driveFileIdCache = Object.create(null);
+        driveFileIdCacheOwnerKey = null;
+        return false;
+    }
+
+    if (driveFileIdCacheOwnerKey === ownerKey
+        && Object.keys(driveFileIdCache).length > 0) {
+        return true;
+    }
+
+    const record = readPersistedDriveFileIdRecord();
+    if (!record || record.ownerKey !== ownerKey) {
+        driveFileIdCache = Object.create(null);
+        driveFileIdCacheOwnerKey = ownerKey;
+        return false;
+    }
+
+    const next = Object.create(null);
+    for (const [filename, fileId] of Object.entries(record.files)) {
+        if (typeof filename === 'string' && filename
+            && typeof fileId === 'string' && fileId) {
+            next[filename] = fileId;
+        }
+    }
+    driveFileIdCache = next;
+    driveFileIdCacheOwnerKey = ownerKey;
+    return Object.keys(next).length > 0;
+}
+
+function rememberDriveFileId(filename, fileId) {
+    if (!filename || !fileId)
+        return;
+
+    hydrateDriveFileIdCacheForCurrentAccount();
+    const profile = getStoredGoogleDriveProfile();
+    const ownerKey = getDriveAccountCacheKey(profile) || driveFileIdCacheOwnerKey;
+    if (!ownerKey)
+        return;
+
+    driveFileIdCache[filename] = fileId;
+    driveFileIdCacheOwnerKey = ownerKey;
+
+    const record = readPersistedDriveFileIdRecord();
+    const files = (record && record.ownerKey === ownerKey && record.files)
+        ? { ...record.files }
+        : Object.create(null);
+    files[filename] = fileId;
+    writePersistedDriveFileIdRecord(ownerKey, files);
+}
+
+function forgetDriveFileId(filename) {
+    if (!filename)
+        return;
+
+    delete driveFileIdCache[filename];
+
+    const profile = getStoredGoogleDriveProfile();
+    const ownerKey = getDriveAccountCacheKey(profile) || driveFileIdCacheOwnerKey;
+    if (!ownerKey)
+        return;
+
+    const record = readPersistedDriveFileIdRecord();
+    if (!record || record.ownerKey !== ownerKey || !record.files)
+        return;
+
+    const files = { ...record.files };
+    if (!(filename in files))
+        return;
+    delete files[filename];
+    writePersistedDriveFileIdRecord(ownerKey, files);
+}
+
+/**
+ * Resolve a Drive appData file ID: memory → persisted → files.list.
+ * Optionally remembers the discovered ID.
+ */
+async function resolveAppDataFileId(token, filename, options) {
+    const remember = options?.remember !== false;
+    hydrateDriveFileIdCacheForCurrentAccount();
+
+    let fileId = driveFileIdCache[filename] || null;
+    if (fileId)
+        return { fileId, fromCache: true };
+
+    fileId = await findAppDataFileId(token, filename);
+    if (fileId && remember)
+        rememberDriveFileId(filename, fileId);
+    return { fileId, fromCache: false };
+}
 
 async function findAppDataFileId(token, filename) {
     const q = encodeURIComponent(`name='${filename.replace(/'/g, "\\'")}'`);
@@ -691,8 +970,14 @@ async function downloadAppDataFileBytes(token, fileId) {
         throw err;
     }
     if (!response.ok) {
-        const body = await response.text();
-        throw new Error(`download failed ${response.status}: ${body}`);
+        const err = new Error(`download failed ${response.status}`);
+        err.status = response.status;
+        try {
+            err.body = await response.text();
+        } catch {
+            // ignore
+        }
+        throw err;
     }
     const buf = await response.arrayBuffer();
     return new Uint8Array(buf);
@@ -719,8 +1004,14 @@ async function createAppDataFile(token, filename, bytes, mimeType, keepalive) {
         throw err;
     }
     if (!response.ok) {
-        const body = await response.text();
-        throw new Error(`create failed ${response.status}: ${body}`);
+        const err = new Error(`create failed ${response.status}`);
+        err.status = response.status;
+        try {
+            err.body = await response.text();
+        } catch {
+            // ignore
+        }
+        throw err;
     }
     return await response.json();
 }
@@ -744,8 +1035,14 @@ async function updateAppDataFileMedia(token, fileId, bytes, mimeType, keepalive)
         throw err;
     }
     if (!response.ok) {
-        const body = await response.text();
-        throw new Error(`update failed ${response.status}: ${body}`);
+        const err = new Error(`update failed ${response.status}`);
+        err.status = response.status;
+        try {
+            err.body = await response.text();
+        } catch {
+            // ignore
+        }
+        throw err;
     }
     return await response.json();
 }
@@ -774,18 +1071,39 @@ window.upsertAppDataFile = async function (filename, content, mimeType, keepaliv
         else
             return { ok: false, error: 'unsupported_content' };
 
-        let existingId = driveFileIdCache[filename] || await findAppDataFileId(token, filename);
+        let resolved = await resolveAppDataFileId(token, filename);
+        let existingId = resolved.fileId;
         let result;
+
         if (existingId) {
-            result = await updateAppDataFileMedia(token, existingId, bytes, mimeType, keepalive);
-            driveFileIdCache[filename] = existingId;
+            try {
+                result = await updateAppDataFileMedia(token, existingId, bytes, mimeType, keepalive);
+                rememberDriveFileId(filename, existingId);
+            } catch (updateErr) {
+                // Stale cached ID: evict, re-resolve by name once, then update or create.
+                if (updateErr?.status === 404 && resolved.fromCache) {
+                    forgetDriveFileId(filename);
+                    resolved = await resolveAppDataFileId(token, filename);
+                    existingId = resolved.fileId;
+                    if (existingId) {
+                        result = await updateAppDataFileMedia(token, existingId, bytes, mimeType, keepalive);
+                        rememberDriveFileId(filename, existingId);
+                    } else {
+                        result = await createAppDataFile(token, filename, bytes, mimeType, keepalive);
+                        if (result?.id)
+                            rememberDriveFileId(filename, result.id);
+                    }
+                } else {
+                    throw updateErr;
+                }
+            }
         } else {
             result = await createAppDataFile(token, filename, bytes, mimeType, keepalive);
             if (result?.id)
-                driveFileIdCache[filename] = result.id;
+                rememberDriveFileId(filename, result.id);
         }
 
-        return { ok: true, fileId: result.id || existingId };
+        return { ok: true, fileId: result?.id || existingId };
     } catch (e) {
         console.error('upsertAppDataFile', e);
         return {
@@ -853,7 +1171,7 @@ window.deleteAllAppDataFiles = async function () {
             error: e.message || String(e)
         };
     } finally {
-        driveFileIdCache = Object.create(null);
+        clearPersistedDriveFileIdCache();
         stagedDriveUpload = null;
         departureUploadInFlightRevisionId = null;
     }
@@ -881,13 +1199,29 @@ window.downloadAppDataFile = async function (filename) {
         if (!token)
             return { ok: false, status: 401, error: 'no_token' };
 
-        let fileId = driveFileIdCache[filename] || await findAppDataFileId(token, filename);
+        let resolved = await resolveAppDataFileId(token, filename);
+        let fileId = resolved.fileId;
         if (!fileId)
             return { ok: true, found: false };
 
-        driveFileIdCache[filename] = fileId;
-        const bytes = await downloadAppDataFileBytes(token, fileId);
-        return { ok: true, found: true, contentBase64: uint8ToBase64(bytes) };
+        try {
+            const bytes = await downloadAppDataFileBytes(token, fileId);
+            rememberDriveFileId(filename, fileId);
+            return { ok: true, found: true, contentBase64: uint8ToBase64(bytes) };
+        } catch (downloadErr) {
+            // Stale cached ID: evict, re-resolve by name once.
+            if (downloadErr?.status === 404 && resolved.fromCache) {
+                forgetDriveFileId(filename);
+                resolved = await resolveAppDataFileId(token, filename);
+                fileId = resolved.fileId;
+                if (!fileId)
+                    return { ok: true, found: false };
+                const bytes = await downloadAppDataFileBytes(token, fileId);
+                rememberDriveFileId(filename, fileId);
+                return { ok: true, found: true, contentBase64: uint8ToBase64(bytes) };
+            }
+            throw downloadErr;
+        }
     } catch (e) {
         console.error('downloadAppDataFile', e);
         return {
@@ -958,6 +1292,7 @@ window.stageDriveUploadPayload = function (gzipBytes, revisionId, rawBytes, keep
         else
             return { ok: false, keepaliveEligible: false, hasCachedFileId: false, gzipBytes: 0, error: 'unsupported_content' };
 
+        hydrateDriveFileIdCacheForCurrentAccount();
         const hasCachedFileId = !!(filename && driveFileIdCache[filename]);
         let eligible = !!keepaliveEligible
             && bytes.length > 0
@@ -976,6 +1311,13 @@ window.stageDriveUploadPayload = function (gzipBytes, revisionId, rawBytes, keep
         console.log(
             `stageDriveUploadPayload revision=${revisionId} gzip=${bytes.length} ` +
             `eligible=${eligible} cachedFileId=${hasCachedFileId}`);
+        window.driveSyncTrace?.('stageDriveUploadPayload', {
+            revisionId,
+            gzipBytes: bytes.length,
+            keepaliveEligible: eligible,
+            hasCachedFileId,
+            rawMempackBytes: rawBytes || 0,
+        });
 
         return {
             ok: true,
@@ -997,6 +1339,7 @@ window.stageDriveUploadPayload = function (gzipBytes, revisionId, rawBytes, keep
 };
 
 window.clearStagedDriveUploadPayload = function () {
+    window.driveSyncTrace?.('clearStagedDriveUploadPayload', summarizeStagedDriveUpload());
     stagedDriveUpload = null;
     departureUploadInFlightRevisionId = null;
 };
@@ -1015,52 +1358,134 @@ window.getStagedDriveUploadPayload = function () {
 };
 
 window.setBeforeUnloadArmed = function (armed) {
-    beforeUnloadArmed = !!armed;
+    const next = !!armed;
+    if (beforeUnloadArmed !== next) {
+        window.driveSyncTrace?.('setBeforeUnloadArmed', {
+            armed: next,
+            staged: summarizeStagedDriveUpload(),
+        });
+    }
+    beforeUnloadArmed = next;
 };
 
 /**
- * Direct keepalive media PATCH using staged bytes + cached file id only.
+ * Direct keepalive media PATCH using staged inventory bytes + cached file id only.
  * Mutually exclusive with oversized beforeunload path.
+ *
+ * Intentionally uploads inventory only (one unload-safe request). Revision
+ * contentSyncedTo finalization is opportunistic via OnKeepaliveUploadSucceeded when
+ * the page stays alive; correctness on hard unload is open-time envelope verification
+ * + silent metadata heal (see UserDataDriveSync.TryHealVerifiedDepartureAsync).
  */
 window.tryKeepaliveStagedInventoryUpload = async function (trigger) {
     const staged = stagedDriveUpload;
-    if (!staged?.bytes?.length || !staged.revisionId)
-        return { ok: false, error: 'no_staged_payload' };
+    window.driveSyncTrace?.('tryKeepaliveStagedInventoryUpload:enter', {
+        trigger,
+        staged: summarizeStagedDriveUpload(),
+    });
 
-    if (!staged.keepaliveEligible || staged.bytes.length > KEEPALIVE_ELIGIBLE_MAX_BYTES)
+    if (!staged?.bytes?.length || !staged.revisionId) {
+        window.driveSyncTrace?.('tryKeepaliveStagedInventoryUpload:skip', {
+            trigger,
+            reason: 'no_staged_payload',
+        });
+        return { ok: false, error: 'no_staged_payload' };
+    }
+
+    if (!staged.keepaliveEligible || staged.bytes.length > KEEPALIVE_ELIGIBLE_MAX_BYTES) {
+        window.driveSyncTrace?.('tryKeepaliveStagedInventoryUpload:skip', {
+            trigger,
+            reason: 'not_eligible',
+            gzipBytes: staged.bytes.length,
+            keepaliveEligible: !!staged.keepaliveEligible,
+        });
         return { ok: false, error: 'not_eligible' };
+    }
 
     if (departureUploadInFlightRevisionId === staged.revisionId) {
         console.log(`tryKeepaliveStagedInventoryUpload coalesce revision=${staged.revisionId} trigger=${trigger}`);
+        window.driveSyncTrace?.('tryKeepaliveStagedInventoryUpload:coalesce', {
+            trigger,
+            revisionId: staged.revisionId,
+        });
         return { ok: true, fileId: driveFileIdCache[staged.filename], coalesced: true };
     }
 
     const token = window.getDriveAppDataAccessToken();
+    hydrateDriveFileIdCacheForCurrentAccount();
     const fileId = driveFileIdCache[staged.filename];
-    if (!token || !fileId)
+    if (!token || !fileId) {
+        window.driveSyncTrace?.('tryKeepaliveStagedInventoryUpload:skip', {
+            trigger,
+            reason: token ? 'no_cached_file_id' : 'no_token',
+            revisionId: staged.revisionId,
+        });
         return { ok: false, status: token ? 0 : 401, error: token ? 'no_cached_file_id' : 'no_token' };
+    }
 
     departureUploadInFlightRevisionId = staged.revisionId;
+    const startedPerf = performance.now();
     console.log(
         `tryKeepaliveStagedInventoryUpload start revision=${staged.revisionId} ` +
         `bytes=${staged.bytes.length} trigger=${trigger}`);
+    window.driveSyncTrace?.('tryKeepaliveStagedInventoryUpload:start', {
+        trigger,
+        revisionId: staged.revisionId,
+        gzipBytes: staged.bytes.length,
+        fileId,
+    });
 
     try {
         await updateAppDataFileMedia(token, fileId, staged.bytes, 'application/gzip', true);
+        const elapsedMs = Math.round(performance.now() - startedPerf);
         console.log(`tryKeepaliveStagedInventoryUpload ok revision=${staged.revisionId}`);
+        window.driveSyncTrace?.('tryKeepaliveStagedInventoryUpload:ok', {
+            trigger,
+            revisionId: staged.revisionId,
+            elapsedMs,
+        });
 
         if (driveFlushDotNetRef) {
-            try {
-                driveFlushDotNetRef.invokeMethodAsync('OnKeepaliveUploadSucceeded', staged.revisionId);
-            } catch (e) {
-                console.warn('OnKeepaliveUploadSucceeded invoke failed', e);
-            }
+            window.driveSyncTrace?.('tryKeepaliveStagedInventoryUpload:finalizeInvoke', {
+                trigger,
+                revisionId: staged.revisionId,
+            });
+            // Fire-and-forget: awaiting DotNet during pagehide can block unload and freeze the next visit.
+            driveFlushDotNetRef.invokeMethodAsync('OnKeepaliveUploadSucceeded', staged.revisionId)
+                .then(() => {
+                    window.driveSyncTrace?.('tryKeepaliveStagedInventoryUpload:finalizeOk', {
+                        trigger,
+                        revisionId: staged.revisionId,
+                    });
+                })
+                .catch((e) => {
+                    console.warn('OnKeepaliveUploadSucceeded invoke failed', e);
+                    window.driveSyncTrace?.('tryKeepaliveStagedInventoryUpload:finalizeFailed', {
+                        trigger,
+                        revisionId: staged.revisionId,
+                        error: e?.message || String(e),
+                    });
+                });
+        } else {
+            window.driveSyncTrace?.('tryKeepaliveStagedInventoryUpload:noDotNetRef', {
+                trigger,
+                revisionId: staged.revisionId,
+            });
         }
 
         return { ok: true, fileId };
     } catch (e) {
         console.error('tryKeepaliveStagedInventoryUpload failed', e);
         departureUploadInFlightRevisionId = null;
+        // Departure path must stay bounded: evict stale IDs but do not list/retry here.
+        if (e?.status === 404)
+            forgetDriveFileId(staged.filename);
+        window.driveSyncTrace?.('tryKeepaliveStagedInventoryUpload:failed', {
+            trigger,
+            revisionId: staged.revisionId,
+            status: e.status || 0,
+            error: e.message || String(e),
+        });
         return {
             ok: false,
             status: e.status || 0,
@@ -1072,24 +1497,55 @@ window.tryKeepaliveStagedInventoryUpload = async function (trigger) {
 /** Register visibility / pagehide / beforeunload hooks for size-aware Drive flush. */
 window.registerDriveFlushHooks = function (dotNetRef) {
     driveFlushDotNetRef = dotNetRef;
+    window.driveSyncTrace?.('registerDriveFlushHooks', {
+        alreadyRegistered: driveFlushHooksRegistered,
+        staged: summarizeStagedDriveUpload(),
+    });
     if (driveFlushHooksRegistered)
         return;
     driveFlushHooksRegistered = true;
 
     const onHidden = () => {
+        const staged = summarizeStagedDriveUpload();
+        window.driveSyncTrace?.('visibilitychange', {
+            visibilityState: document.visibilityState,
+            staged,
+        });
         if (document.visibilityState !== 'hidden')
             return;
         // Small eligible only — mutually exclusive with beforeunload large path.
-        if (stagedDriveUpload?.keepaliveEligible)
+        if (stagedDriveUpload?.keepaliveEligible) {
             window.tryKeepaliveStagedInventoryUpload('visibilitychange');
+        } else {
+            window.driveSyncTrace?.('visibilitychange:skip', {
+                reason: staged ? 'not_keepalive_eligible' : 'no_staged_payload',
+                staged,
+            });
+        }
     };
 
-    const onPageHide = () => {
-        if (stagedDriveUpload?.keepaliveEligible)
+    const onPageHide = (event) => {
+        const staged = summarizeStagedDriveUpload();
+        window.driveSyncTrace?.('pagehide', {
+            persisted: !!event?.persisted,
+            staged,
+        });
+        if (stagedDriveUpload?.keepaliveEligible) {
             window.tryKeepaliveStagedInventoryUpload('pagehide');
+        } else {
+            window.driveSyncTrace?.('pagehide:skip', {
+                reason: staged ? 'not_keepalive_eligible' : 'no_staged_payload',
+                staged,
+            });
+        }
     };
 
     const onBeforeUnload = (event) => {
+        const staged = summarizeStagedDriveUpload();
+        window.driveSyncTrace?.('beforeunload', {
+            beforeUnloadArmed,
+            staged,
+        });
         if (!beforeUnloadArmed)
             return;
         if (stagedDriveUpload?.keepaliveEligible)
@@ -1102,6 +1558,9 @@ window.registerDriveFlushHooks = function (dotNetRef) {
                 driveFlushDotNetRef.invokeMethodAsync('OnDepartureStayRequested');
             } catch (e) {
                 console.warn('beforeunload flush invoke failed', e);
+                window.driveSyncTrace?.('beforeunload:invokeFailed', {
+                    error: e?.message || String(e),
+                });
             }
         }
 
@@ -1112,9 +1571,13 @@ window.registerDriveFlushHooks = function (dotNetRef) {
     document.addEventListener('visibilitychange', onHidden);
     window.addEventListener('pagehide', onPageHide);
     window.addEventListener('beforeunload', onBeforeUnload);
+    window.driveSyncTrace?.('registerDriveFlushHooks:armed', { hooks: ['visibilitychange', 'pagehide', 'beforeunload'] });
 };
 
 window.unregisterDriveFlushHooks = function () {
+    window.driveSyncTrace?.('unregisterDriveFlushHooks', {
+        staged: summarizeStagedDriveUpload(),
+    });
     driveFlushDotNetRef = null;
     beforeUnloadArmed = false;
 };
