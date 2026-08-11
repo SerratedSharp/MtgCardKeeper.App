@@ -158,8 +158,15 @@ window.initializeGoogleSignIn = function () {
             console.log('Google Drive connect clicked; requesting token with user activation');
             button.disabled = true;
             window.ensureDriveAppDataTokenAsync(false)
-                .then((result) => {
+                .then(async (result) => {
                     console.log('Google Drive connect completed', result);
+                    if (result?.ok && signInUiDotNetRef) {
+                        try {
+                            await signInUiDotNetRef.invokeMethodAsync('AfterDriveConnectSucceeded');
+                        } catch (error) {
+                            console.warn('AfterDriveConnectSucceeded failed', error);
+                        }
+                    }
                 })
                 .catch((error) => {
                     console.error('Google Drive authorization failed', error);
@@ -698,6 +705,29 @@ function clearStoredDriveAuthorization() {
     beforeUnloadArmed = false;
 }
 
+function clearStoredGoogleIdentity() {
+    localStorage.removeItem(GOOGLE_IDENTITY_PROFILE_KEY);
+    tokenClient = null;
+    tokenClientAccountHint = null;
+}
+
+window.clearStoredDriveAuthorization = clearStoredDriveAuthorization;
+window.clearStoredGoogleIdentity = clearStoredGoogleIdentity;
+
+/** Clear identity + Drive soft-auth and disable GIS auto-select for account switch. */
+window.switchGoogleAccount = function () {
+    clearStoredDriveAuthorization();
+    clearStoredGoogleIdentity();
+    try {
+        if (window.google?.accounts?.id?.disableAutoSelect)
+            google.accounts.id.disableAutoSelect();
+    } catch (error) {
+        console.warn('disableAutoSelect failed', error);
+    }
+
+    notifySignInUi('signed_out', 'Select a Google account to continue.', null);
+};
+
 async function fetchAndStoreGoogleDriveProfile(token) {
     try {
         const response = await fetch(
@@ -787,8 +817,6 @@ window.getDriveAppDataAccessToken = function () {
         return null;
     return getAccessTokenResponse()?.access_token ?? null;
 };
-
-window.clearStoredDriveAuthorization = clearStoredDriveAuthorization;
 
 function getDriveAccountCacheKey(profile) {
     if (!profile)
