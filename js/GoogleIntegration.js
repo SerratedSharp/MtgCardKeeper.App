@@ -114,8 +114,9 @@ const DRIVE_TOKEN_REFRESH_LEAD_MS = 5 * 60 * 1000;
 const DRIVE_TOKEN_REFRESH_RETRY_MS = 5 * 60 * 1000;
 
 
-window.initializeGoogleSignIn = function () {
-    console.log('initializing Google identity and Drive authorization');
+window.initializeGoogleSignIn = function (showSignInButton) {
+    const renderSignIn = showSignInButton === true;
+    console.log('initializing Google identity and Drive authorization', { renderSignIn });
     if (!window.google?.accounts?.id) {
         console.warn('Google Identity Services is not ready; will retry when Manage Data opens again');
         return false;
@@ -131,13 +132,15 @@ window.initializeGoogleSignIn = function () {
         if (!container)
             continue;
         container.replaceChildren();
-        google.accounts.id.renderButton(container, {
-            theme: 'filled_black',
-            type: 'standard',
-            shape: 'rectangular',
-            text: 'signin_with',
-            size: 'large'
-        });
+        if (renderSignIn) {
+            google.accounts.id.renderButton(container, {
+                theme: 'filled_black',
+                type: 'standard',
+                shape: 'rectangular',
+                text: 'signin_with',
+                size: 'large'
+            });
+        }
     }
 
     const identityProfile = getStoredGoogleIdentityProfile();
@@ -725,7 +728,21 @@ window.switchGoogleAccount = function () {
         console.warn('disableAutoSelect failed', error);
     }
 
-    notifySignInUi('signed_out', 'Select a Google account to continue.', null);
+    notifySignInUi('signed_out', 'Choose a Google account below, then connect Google Drive.', null);
+};
+
+/** Sign out: clear app-stored Google identity and Drive authorization. */
+window.signOutGoogle = function () {
+    clearStoredDriveAuthorization();
+    clearStoredGoogleIdentity();
+    try {
+        if (window.google?.accounts?.id?.disableAutoSelect)
+            google.accounts.id.disableAutoSelect();
+    } catch (error) {
+        console.warn('disableAutoSelect failed', error);
+    }
+
+    notifySignInUi('signed_out', 'Signed out of Google.', null);
 };
 
 async function fetchAndStoreGoogleDriveProfile(token) {
