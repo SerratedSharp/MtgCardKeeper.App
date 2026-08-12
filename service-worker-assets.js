@@ -613,7 +613,7 @@ self.assetsManifest = {
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-K7cihG1J6PEZ0B\/ouikGm4zys6v\/6h+onCSlKHCcWpo=",
+      "hash": "sha256-\/qj1Uw2zX6syxflaJ+\/0NSJcTbaoX+mxZUDsnvh8pmo=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -621,7 +621,7 @@ self.assetsManifest = {
       "url": "_framework\/dotnet.native.8.0.30.vhri5d1kn0.js"
     },
     {
-      "hash": "sha256-dbIttiI97W\/wHJT5s0iWJQaazySaAC1Vgq\/cKdVPYTU=",
+      "hash": "sha256-SwS6HvVctL\/Ct42h96kCh2EnsnNv8fDRoQTpvEj+KFc=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -777,15 +777,15 @@ self.assetsManifest = {
       "url": "_framework\/Microsoft.Win32.SystemEvents.wasm"
     },
     {
-      "hash": "sha256-ORiccIkFnZx0DvlI9hrl\/s1eZOWDoN0i1GtjoJWH3cw=",
+      "hash": "sha256-R2y5+Qo6DL36+nk4x0O6FzHCRCKV07RvL8F6aDLgWqQ=",
       "url": "_framework\/MtgCardKeeper.BlazorWasm.wasm"
     },
     {
-      "hash": "sha256-us0Jwfavbs5RP7PVfrMQlLg2KVKCG6rS60Uruc\/QANY=",
+      "hash": "sha256-mY6xZXS0Quk+oCg7zKXCp5ShQIiYG5mTvzcpxiOnlvs=",
       "url": "_framework\/MtgCardKeeper.RclViews.wasm"
     },
     {
-      "hash": "sha256-JQAUjqhUP\/zBpH1jnBqVafkiZIOh6TmKLYk4rD2Obv0=",
+      "hash": "sha256-BcW1TGG3zQxbiSDODa1QU3Plb4qVeGvpkHS7T7B7Z+g=",
       "url": "_framework\/MtgCardKeeper.WasmShared.wasm"
     },
     {
@@ -933,7 +933,7 @@ self.assetsManifest = {
       "url": "_framework\/System.Linq.Queryable.wasm"
     },
     {
-      "hash": "sha256-dmZkTQydPJQxYYqTSr82W+Ao7dSjixwQS2+RhP7giZ8=",
+      "hash": "sha256-U9g2j3Q+1\/DV3q0MH8ezRl2wMNe0BSkfvL6s6dt38dg=",
       "url": "_framework\/System.Linq.wasm"
     },
     {
@@ -997,7 +997,7 @@ self.assetsManifest = {
       "url": "_framework\/System.ObjectModel.wasm"
     },
     {
-      "hash": "sha256-l9kWmwPgG0m2gE6Rk4mFdQfhfc9w0MKK9i7xNZrX\/mM=",
+      "hash": "sha256-7pexu83bni7isqIqYPkNpmRMcuuGN\/7yw2NsdFSu3Wo=",
       "url": "_framework\/System.Private.CoreLib.wasm"
     },
     {
@@ -1393,5 +1393,5 @@ self.assetsManifest = {
       "url": "_content\/MtgCardKeeper.RclViews\/tester.js"
     }
   ],
-  "version": "1XE4mich"
+  "version": "g3ePdIaZ"
 };
