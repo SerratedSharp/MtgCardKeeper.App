@@ -613,7 +613,7 @@ self.assetsManifest = {
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-AjoQxZBOfx5Fb\/nCu8z6ihSG6Pcbfa3vvXfImMGWQv8=",
+      "hash": "sha256-K7cihG1J6PEZ0B\/ouikGm4zys6v\/6h+onCSlKHCcWpo=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -621,7 +621,7 @@ self.assetsManifest = {
       "url": "_framework\/dotnet.native.8.0.30.vhri5d1kn0.js"
     },
     {
-      "hash": "sha256-MfWt9f6z11z0M5t8+0AijvzH+njwWOGKz21Tr2zvTI0=",
+      "hash": "sha256-dbIttiI97W\/wHJT5s0iWJQaazySaAC1Vgq\/cKdVPYTU=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -777,7 +777,7 @@ self.assetsManifest = {
       "url": "_framework\/Microsoft.Win32.SystemEvents.wasm"
     },
     {
-      "hash": "sha256-jo+s72uuXackjuDLrzn+vak+yovtsgRtdoXzo0qcdLo=",
+      "hash": "sha256-ORiccIkFnZx0DvlI9hrl\/s1eZOWDoN0i1GtjoJWH3cw=",
       "url": "_framework\/MtgCardKeeper.BlazorWasm.wasm"
     },
     {
@@ -1393,5 +1393,5 @@ self.assetsManifest = {
       "url": "_content\/MtgCardKeeper.RclViews\/tester.js"
     }
   ],
-  "version": "ZFcJaBg8"
+  "version": "1XE4mich"
 };

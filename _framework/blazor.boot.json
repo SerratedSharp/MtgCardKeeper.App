@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "MtgCardKeeper.BlazorWasm",
   "resources": {
-    "hash": "sha256-BUUDBePQvhWFKa4Hn5W/ReDy3KQvYs3gXS2J6sbD9R0=",
+    "hash": "sha256-7sVeVZKPc9601zfWH+aV9O+HFFszWZ4MPiERCVeyRek=",
     "jsModuleNative": {
       "dotnet.native.8.0.30.vhri5d1kn0.js": "sha256-glEOXa30sLuJBpxU9KOlsw2Eogna/xZKUZxbwI68uZQ="
     },
@@ -9,7 +9,7 @@
       "dotnet.runtime.8.0.30.dweckncnnt.js": "sha256-Iz92tEdLDz6hULg8toBVTeVi4QRnFEbFBy3lo3dbmEw="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-MfWt9f6z11z0M5t8+0AijvzH+njwWOGKz21Tr2zvTI0="
+      "dotnet.native.wasm": "sha256-dbIttiI97W/wHJT5s0iWJQaazySaAC1Vgq/cKdVPYTU="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -55,7 +55,7 @@
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-sLSiCKh0RQEV/2cl05tr7wOLWzExQfPZovvpqYLJduQ=",
       "Microsoft.Win32.Primitives.wasm": "sha256-1v3nKl0kO6kIRQjf/PZEsxpipvhDjEkHwZeahpB9jSY=",
       "Microsoft.Win32.SystemEvents.wasm": "sha256-lbNkVd5YWrK5Ln2JhKXGvvSCXSQduZm6e9c2T/3ML6Y=",
-      "MtgCardKeeper.BlazorWasm.wasm": "sha256-jo+s72uuXackjuDLrzn+vak+yovtsgRtdoXzo0qcdLo=",
+      "MtgCardKeeper.BlazorWasm.wasm": "sha256-ORiccIkFnZx0DvlI9hrl/s1eZOWDoN0i1GtjoJWH3cw=",
       "MtgCardKeeper.RclViews.wasm": "sha256-us0Jwfavbs5RP7PVfrMQlLg2KVKCG6rS60Uruc/QANY=",
       "MtgCardKeeper.WasmShared.wasm": "sha256-JQAUjqhUP/zBpH1jnBqVafkiZIOh6TmKLYk4rD2Obv0=",
       "netstandard.wasm": "sha256-lw1a4OjeBUpoPkyRFapSEEMKaGgMhSZ5f5mfYxgQLEY=",
