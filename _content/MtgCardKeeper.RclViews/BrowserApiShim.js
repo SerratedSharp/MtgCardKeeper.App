@@ -41,9 +41,70 @@ type "image/jpeg"
 webkitRelativePath:""
    */
 
+    const FileSystemAccess = BrowserApiShim.FileSystemAccess || {};
+    BrowserApiShim.FileSystemAccess = FileSystemAccess;
 
+    const BackupFileSuffix = '.mtgk.gz';
+    const BackupFilePrefix = 'mtgk-backup-';
 
+    FileSystemAccess.isDirectoryPickerSupported = () => !!window.showDirectoryPicker;
+
+    FileSystemAccess.selectBackupFolder = async () => {
+        if (!window.showDirectoryPicker) {
+            throw new Error('Directory picker not supported');
+        }
+        try {
+            return await window.showDirectoryPicker();
+        } catch (error) {
+            if (error.name === 'AbortError') {
+                return null;
+            }
+            throw error;
+        }
+    };
+
+    FileSystemAccess.getFolderName = async (directoryHandle) => {
+        if (!directoryHandle || !directoryHandle.name) {
+            return 'Unknown';
+        }
+        return directoryHandle.name;
+    };
+
+    FileSystemAccess.enumerateBackupFiles = async (directoryHandle) => {
+        const backupFiles = [];
+        for await (const entry of directoryHandle.values()) {
+            if (entry.kind === 'file'
+                && entry.name.startsWith(BackupFilePrefix)
+                && entry.name.endsWith(BackupFileSuffix)) {
+                backupFiles.push(entry.name);
+            }
+        }
+        backupFiles.sort((a, b) => b.localeCompare(a));
+        return backupFiles;
+    };
+
+    FileSystemAccess.readFileFromDirectory = async (directoryHandle, filename) => {
+        const fileHandle = await directoryHandle.getFileHandle(filename);
+        const file = await fileHandle.getFile();
+        const buffer = await file.arrayBuffer();
+        return new Uint8Array(buffer);
+    };
+
+    FileSystemAccess.writeFileToDirectory = async (directoryHandle, filename, bytes) => {
+        const fileHandle = await directoryHandle.getFileHandle(filename, { create: true });
+        const writable = await fileHandle.createWritable();
+        const payload = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
+        await writable.write(payload);
+        await writable.close();
+        return true;
+    };
+
+    globalThis.BrowserApiShim = BrowserApiShim;
 
 })(BrowserApiShim);
+
+export function getFileSystemAccess() {
+    return BrowserApiShim.FileSystemAccess;
+}
 
 export { BrowserApiShim }; 

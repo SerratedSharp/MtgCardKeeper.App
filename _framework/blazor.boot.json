@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "MtgCardKeeper.BlazorWasm",
   "resources": {
-    "hash": "sha256-g8RuvW2/VgKbMYx0Ja9texKfsCAvewWKz6dZRqKfaCI=",
+    "hash": "sha256-EYrIXd7GPpiwMY01bvzqvNM6RdjtfbkeLHyHHXhwTUY=",
     "jsModuleNative": {
       "dotnet.native.8.0.30.vhri5d1kn0.js": "sha256-glEOXa30sLuJBpxU9KOlsw2Eogna/xZKUZxbwI68uZQ="
     },
@@ -9,7 +9,7 @@
       "dotnet.runtime.8.0.30.dweckncnnt.js": "sha256-Iz92tEdLDz6hULg8toBVTeVi4QRnFEbFBy3lo3dbmEw="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-SwS6HvVctL/Ct42h96kCh2EnsnNv8fDRoQTpvEj+KFc="
+      "dotnet.native.wasm": "sha256-D5KkdwfQZqwt+0moPiiE1yJIG+GutcVqxVOflpD/xfo="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -55,9 +55,9 @@
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-sLSiCKh0RQEV/2cl05tr7wOLWzExQfPZovvpqYLJduQ=",
       "Microsoft.Win32.Primitives.wasm": "sha256-1v3nKl0kO6kIRQjf/PZEsxpipvhDjEkHwZeahpB9jSY=",
       "Microsoft.Win32.SystemEvents.wasm": "sha256-lbNkVd5YWrK5Ln2JhKXGvvSCXSQduZm6e9c2T/3ML6Y=",
-      "MtgCardKeeper.BlazorWasm.wasm": "sha256-R2y5+Qo6DL36+nk4x0O6FzHCRCKV07RvL8F6aDLgWqQ=",
-      "MtgCardKeeper.RclViews.wasm": "sha256-mY6xZXS0Quk+oCg7zKXCp5ShQIiYG5mTvzcpxiOnlvs=",
-      "MtgCardKeeper.WasmShared.wasm": "sha256-BcW1TGG3zQxbiSDODa1QU3Plb4qVeGvpkHS7T7B7Z+g=",
+      "MtgCardKeeper.BlazorWasm.wasm": "sha256-BGLa26bjxOL7S44ZU+g5Mb+a+3NTghKzF63WN7dqewI=",
+      "MtgCardKeeper.RclViews.wasm": "sha256-DsOBAQxlDsveST4a/7jql+916YJq6UeuckYN4j7wWxU=",
+      "MtgCardKeeper.WasmShared.wasm": "sha256-LymqkAUU1K5XqMiYssqGHdzcAX2kqMQnrYR3Wn3k2Ic=",
       "netstandard.wasm": "sha256-lw1a4OjeBUpoPkyRFapSEEMKaGgMhSZ5f5mfYxgQLEY=",
       "Newtonsoft.Json.wasm": "sha256-GlXMWKvDs45M2pACoR3Y4Qh8mcrOZGljqmvJY+6JZ5s=",
       "SerratedSharp.JSInteropHelpers.wasm": "sha256-lSbAgD/dSpp4EqSqZ6lWF5zOF2683HjQ9gSvuB8xOEY=",
@@ -94,7 +94,7 @@
       "System.IO.MemoryMappedFiles.wasm": "sha256-s4VogJA66cd+fZDpSdZ+FX5ITxZHBFqvDGe1VpHjbr4=",
       "System.Linq.Expressions.wasm": "sha256-p6vf/n5hW4hkDpE2bI7H/KBt9X2ZqzPvK58w46oRcE4=",
       "System.Linq.Queryable.wasm": "sha256-Z1F+l+rWlK5DweWkazXR+s0QYfFMdLXuRYCxWk/5mNk=",
-      "System.Linq.wasm": "sha256-U9g2j3Q+1/DV3q0MH8ezRl2wMNe0BSkfvL6s6dt38dg=",
+      "System.Linq.wasm": "sha256-+51lCGAxJZQQGx+tQuP6Bee6FNFYR4nC2Ugg5bZGfxk=",
       "System.Memory.wasm": "sha256-SL0rg/dgooMpf4zYLuCp4b6PiCTWkTDUZfzvfG+mwpk=",
       "System.Net.Http.Json.wasm": "sha256-STtv0jXsrENGkr+SxKMUXlCkicsJa5BIDyTyPAxTlA4=",
       "System.Net.Http.wasm": "sha256-M3qtW2gETIZGfwIPJykGHT27uwDgbrPwM/L+2xCOrlU=",
