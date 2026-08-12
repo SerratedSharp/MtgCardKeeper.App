@@ -32,7 +32,7 @@ let BrowserApiShim = globalThis.BrowserApiShim || {};// Conditionally create nam
 
     // Expects a File as input:
    /*
-   File {name: 'Jada.jpg', lastModified: 1703653043646, lastModifiedDate: Tue Dec 26 2023 23:57:23 GMT-0500 (Eastern Standard Time), webkitRelativePath: '', size: 205748, …}
+   File {name: 'Jada.jpg', lastModified: 1703653043646, lastModifiedDate: Tue Dec 26 2023 23:57:23 GMT-0500 (Eastern Standard Time), webkitRelativePath: '', size: 205748, ï¿½}
 lastModified 1703653043646
 lastModifiedDate Tue Dec 26 2023 23:57:23 GMT-0500 (Eastern Standard Time) {}
 name "Jada.jpg"
