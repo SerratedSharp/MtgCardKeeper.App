@@ -69,7 +69,7 @@ self.assetsManifest = {
       "url": "cardData\/Sets.json"
     },
     {
-      "hash": "sha256-F9I1+km7KCAEG9vZNRhxcuAKPlTMwBXTKTDoZ4VtYXQ=",
+      "hash": "sha256-NX8FwND+GplBQdNhNJhHV9LEZaU6npM5ObDQS7AgtNA=",
       "url": "css\/app.css"
     },
     {
@@ -617,7 +617,7 @@ self.assetsManifest = {
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-1fcYUQdpGAM8MRdXMgsGPQl6T9G0+hl80Jg1lCTUzY4=",
+      "hash": "sha256-frG7utt98KkwsbRSxGZ3yqyEypBkWQvldLnzQGMPCao=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -625,7 +625,7 @@ self.assetsManifest = {
       "url": "_framework\/dotnet.native.8.0.30.vhri5d1kn0.js"
     },
     {
-      "hash": "sha256-xFnKewVOklIe\/qtfRJfMWmb49S6eTW6XOnoZTSB+oms=",
+      "hash": "sha256-2rUM3VKsdtn4FzAwBivqATlB1JnVOWwge10rvy+DMJ4=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -781,15 +781,15 @@ self.assetsManifest = {
       "url": "_framework\/Microsoft.Win32.SystemEvents.wasm"
     },
     {
-      "hash": "sha256-55AJB75mRygSRuu1bXmOBaSP3Ok84VrNu87TFGhKDoc=",
+      "hash": "sha256-ZnuUDDdkBob8TcVrgZpuKmZaFLqXxnK8XWoajaHIki8=",
       "url": "_framework\/MtgCardKeeper.BlazorWasm.wasm"
     },
     {
-      "hash": "sha256-0Jkt+V+y3oJ9PE6hrpHIDgjp5x1VsuLMOEkX4Y7aRGI=",
+      "hash": "sha256-1wt0oMv2\/FWTkHdEtg\/Qi+l6YEIntoDLYy8E\/MFoTug=",
       "url": "_framework\/MtgCardKeeper.RclViews.wasm"
     },
     {
-      "hash": "sha256-TxF7IONtDcn4e+mugQLms9Cv23isa7fyDxsjp7aGUHo=",
+      "hash": "sha256-SQ08ZB9KTD3JSlEuQ+z85oFTzBjPaURwAcbQcyXKAv0=",
       "url": "_framework\/MtgCardKeeper.WasmShared.wasm"
     },
     {
@@ -1097,7 +1097,7 @@ self.assetsManifest = {
       "url": "_framework\/System.Runtime.Serialization.Primitives.wasm"
     },
     {
-      "hash": "sha256-f\/qJCrwNpNnfnAVQYiVncpwzoUNJR8rHRJi\/2KjvTDY=",
+      "hash": "sha256-P1td1QkMBSH7n+6LeWeQDlnWSSllenulpLcwCPkth4s=",
       "url": "_framework\/System.Runtime.wasm"
     },
     {
@@ -1397,5 +1397,5 @@ self.assetsManifest = {
       "url": "_content\/MtgCardKeeper.RclViews\/tester.js"
     }
   ],
-  "version": "F28C6wvm"
+  "version": "7ORw0pPh"
 };
