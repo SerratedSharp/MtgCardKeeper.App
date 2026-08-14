@@ -49,4 +49,22 @@ window.mtgCardKeeper = window.mtgCardKeeper || {};
         const el = document.querySelector('meta[name="mck-build"]');
         return el?.getAttribute('content') || 'local';
     };
+
+    // Double rAF: Task.Delay(1) does not produce a paint on Chrome Android.
+    window.mtgCardKeeper.yieldToPaint = function () {
+        return new Promise(function (resolve) {
+            requestAnimationFrame(function () {
+                requestAnimationFrame(resolve);
+            });
+        });
+    };
+
+    window.mtgCardKeeper.readInputFileAsText = function (inputId) {
+        const el = document.getElementById(inputId);
+        const file = el && el.files && el.files[0];
+        if (!file) {
+            return Promise.reject(new Error('No file selected'));
+        }
+        return file.text();
+    };
 })();

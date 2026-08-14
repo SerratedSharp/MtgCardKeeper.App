@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "MtgCardKeeper.BlazorWasm",
   "resources": {
-    "hash": "sha256-EljYo4X8iAi5RyTRNkE3jF2bjc5g6ePexEV9FavAoPQ=",
+    "hash": "sha256-fOTGYOCnbOjtzmtFtSNnHVzh+SnYtj6Py83zxywNEXk=",
     "jsModuleNative": {
       "dotnet.native.8.0.30.vhri5d1kn0.js": "sha256-glEOXa30sLuJBpxU9KOlsw2Eogna/xZKUZxbwI68uZQ="
     },
@@ -9,7 +9,7 @@
       "dotnet.runtime.8.0.30.dweckncnnt.js": "sha256-Iz92tEdLDz6hULg8toBVTeVi4QRnFEbFBy3lo3dbmEw="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-VphMbaQyPyzPVPpQtA30zZKfBZo8UxGULp8vRK6xRfs="
+      "dotnet.native.wasm": "sha256-BEFjaAaBnV1cgGMm7saub7yUwUDPmp0posuMORrANmo="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -35,7 +35,7 @@
       "MemoryPack.Core.wasm": "sha256-lTkvC0xVyr3Xdt0u36ZIZpSdWu58a2+GYU9RU1kwNLI=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-JMmtdcNlmkJl8Ody+Dx5qffKxurAKzM0ZmFrKbNOIlU=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-STHU0lG3Cg5PmyWJJQXE6qKPFmUBb/8d5zhm3SqC7ow=",
-      "Microsoft.AspNetCore.Components.Web.wasm": "sha256-/gAWVja6QHKeRnwCVERVVwNCBFtg8svqdT2VOGBAjKs=",
+      "Microsoft.AspNetCore.Components.Web.wasm": "sha256-VU0mzhQ97lvX5tZ5VUkeAmA036ZRwtTQ01wDbAn3v6c=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-tLLI0/pifLwSL4ALPsWACdBPaaRK2/nH948ievMn71s=",
       "Microsoft.AspNetCore.Http.Abstractions.wasm": "sha256-aPjR8YQYZRQOCbPYFnx/tOBYEqSXaAF/F/Cd883tTH4=",
       "Microsoft.AspNetCore.Http.Features.wasm": "sha256-hF86nD892lo0u26YKc0I78W2vbzPNsSJRdXv/fpfy60=",
@@ -55,7 +55,7 @@
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-sLSiCKh0RQEV/2cl05tr7wOLWzExQfPZovvpqYLJduQ=",
       "Microsoft.Win32.Primitives.wasm": "sha256-1v3nKl0kO6kIRQjf/PZEsxpipvhDjEkHwZeahpB9jSY=",
       "Microsoft.Win32.SystemEvents.wasm": "sha256-lbNkVd5YWrK5Ln2JhKXGvvSCXSQduZm6e9c2T/3ML6Y=",
-      "MtgCardKeeper.BlazorWasm.wasm": "sha256-DFG69ixhNI1gKla8ysho2LtATMo6X/XXHHEF897e3QY=",
+      "MtgCardKeeper.BlazorWasm.wasm": "sha256-70A4DUZTALyqcWDwepr9END9OONZLmCcTfYoe9DquJY=",
       "MtgCardKeeper.RclViews.wasm": "sha256-RdPKrJ30zjrH9Z9AHEiPx6wHGo4bEB557Afgk0hOGjQ=",
       "MtgCardKeeper.WasmShared.wasm": "sha256-ehQ2koxJE2mmNLu5oDaAETZcBLsJSSYC5fs1Fm/b4iw=",
       "netstandard.wasm": "sha256-lw1a4OjeBUpoPkyRFapSEEMKaGgMhSZ5f5mfYxgQLEY=",
