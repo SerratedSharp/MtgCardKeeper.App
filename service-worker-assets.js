@@ -69,7 +69,7 @@ self.assetsManifest = {
       "url": "cardData\/Sets.json"
     },
     {
-      "hash": "sha256-NX8FwND+GplBQdNhNJhHV9LEZaU6npM5ObDQS7AgtNA=",
+      "hash": "sha256-tr6Q9spHiiQHfF6TWVjEOCE+PVpKdcX+i6kvEO9fJ28=",
       "url": "css\/app.css"
     },
     {
@@ -513,7 +513,7 @@ self.assetsManifest = {
       "url": "images\/mtg-card-back.jpg"
     },
     {
-      "hash": "sha256-nFvaG1MGBRQC23dak9HKGuYNVn7xXjP0xsYG6t23oyM=",
+      "hash": "sha256-X1XyUdAb+gpFpa2o8zhgEZZIrFXnqrKkXpt5wxGGYe8=",
       "url": "index.html"
     },
     {
@@ -617,7 +617,7 @@ self.assetsManifest = {
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-MWdsrHdPkLC5I7eBrxREfB+LAJrVPAhkGIaHVq3osOE=",
+      "hash": "sha256-\/SHlSjOwxZlH2Ka47hdcdF+HWQwlziObubKEM7SXo\/o=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -625,7 +625,7 @@ self.assetsManifest = {
       "url": "_framework\/dotnet.native.8.0.30.vhri5d1kn0.js"
     },
     {
-      "hash": "sha256-a0vh98J1YM7NTFrFnWDxTk4REyVD7sJH7ZFJfbKcjpQ=",
+      "hash": "sha256-s9W3qkZkL6ofLeZv5vePLYS9Oe2ySCGaXX4Kz5Il08o=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -781,15 +781,15 @@ self.assetsManifest = {
       "url": "_framework\/Microsoft.Win32.SystemEvents.wasm"
     },
     {
-      "hash": "sha256-R3UqwaVhk5PlcpnwLVBYYw7dBJfiAuNDZt\/2RF0bNhs=",
+      "hash": "sha256-G6FwIE4Fhph5PyakDaho8dcqoYmRvNoiuFzuyZiuCxU=",
       "url": "_framework\/MtgCardKeeper.BlazorWasm.wasm"
     },
     {
-      "hash": "sha256-10J47ZF9rKvvWXDdrwV0f43wNMAV4\/QLofZveB19so0=",
+      "hash": "sha256-luwwnRlKwN9Cl\/6wC4eISOd+ofAnxtHrIG7Q7EqHHCc=",
       "url": "_framework\/MtgCardKeeper.RclViews.wasm"
     },
     {
-      "hash": "sha256-OmBzKPhFtL4mlw2SENXmcFRT+qd0esB+WlPjF3vY7us=",
+      "hash": "sha256-OWgFWBYk+qYQOuNS5f5nXtDe0HtvMjGlyrb5z+5ZDb8=",
       "url": "_framework\/MtgCardKeeper.WasmShared.wasm"
     },
     {
@@ -1397,5 +1397,5 @@ self.assetsManifest = {
       "url": "_content\/MtgCardKeeper.RclViews\/tester.js"
     }
   ],
-  "version": "2ntC7vtw"
+  "version": "nAyHA44M"
 };

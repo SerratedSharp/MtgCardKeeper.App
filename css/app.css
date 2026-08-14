@@ -1,11 +1,11 @@
 
 /* BlazorBootstrap Modal chrome is outside CardImagePreviewModal scoped CSS ancestry.
-   Size to Scryfall PNG (744×1040); shrink with the viewport.
+   Size to Scryfall large JPEG (672×936); shrink with the viewport.
    Bootstrap has no utility between xs and sm (576px); center until a narrower custom breakpoint. */
 .card-image-preview-modal {
-    --bs-modal-width: 744px;
-    width: min(744px, 100%);
-    max-width: min(744px, 100%);
+    --bs-modal-width: 672px;
+    width: min(672px, 100%);
+    max-width: min(672px, 100%);
     margin-left: auto;
     margin-right: auto;
 }
@@ -40,6 +40,20 @@
     margin: 0;
     border: 0;
     min-height: 0;
+}
+
+/* Instant show/hide: skip Bootstrap fade + slide for this dialog only. */
+.modal.fade:has(.card-image-preview-modal) {
+    transition: none;
+}
+
+.modal.fade:has(.card-image-preview-modal) .modal-dialog {
+    transition: none;
+    transform: none;
+}
+
+body:has(.card-image-preview-modal) .modal-backdrop.fade {
+    transition: none;
 }
 
 .import-dialog-progress {
