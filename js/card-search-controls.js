@@ -44,4 +44,9 @@ window.mtgCardKeeper = window.mtgCardKeeper || {};
         enable: enable,
         disable: disable
     };
+
+    window.mtgCardKeeper.getBuildVersion = function () {
+        const el = document.querySelector('meta[name="mck-build"]');
+        return el?.getAttribute('content') || 'local';
+    };
 })();
