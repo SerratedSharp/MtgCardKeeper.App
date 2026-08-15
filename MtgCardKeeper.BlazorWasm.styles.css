@@ -356,8 +356,9 @@
 .card-tile[b-l2xiba3uvs]  .card-tile-owned-count {
     position: absolute;
     bottom: 0.35rem;
-    left: 0.35rem;
-    z-index: 6;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 21;
     pointer-events: none;
 }
 /* /Cards/CardSummaryTable.razor.rz.scp.css */
@@ -592,19 +593,34 @@
 .owned-count-badge[b-ow3b80nz1e] {
     display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
-    padding: 0.15rem 0.45rem;
+    gap: 0.15rem;
+    padding: 0.05rem 0.24rem 0.1rem;
     border-radius: 999px;
     background: #111827;
     color: #fff;
     font-size: 0.8rem;
     font-weight: 600;
     line-height: 1;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28);
+    box-shadow:
+        0 0 0 1.5px #fff,
+        0 1px 3px rgba(0, 0, 0, 0.28);
 }
 
-.owned-count-badge i[b-ow3b80nz1e] {
-    font-size: 0.75rem;
+.owned-count-icon[b-ow3b80nz1e] {
+    display: inline-flex;
+    width: 1.46em;
+    height: 1.58em;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.owned-count-icon svg[b-ow3b80nz1e] {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 /* /Collection/CollectionToastHost.razor.rz.scp.css */
 .collection-toast-host[b-jsqe0pblde] {

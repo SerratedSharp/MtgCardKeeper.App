@@ -1,7 +1,7 @@
 self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-FHVGXd\/VhOY2xbj1g28\/CEoQYg55GFQX0N8zuGUzluk=",
+      "hash": "sha256-WKl1rCyrAkU0iHgliujr7qpfwAwQOEB06ThIHap7tvw=",
       "url": "MtgCardKeeper.BlazorWasm.styles.css"
     },
     {
@@ -513,7 +513,7 @@ self.assetsManifest = {
       "url": "images\/mtg-card-back.jpg"
     },
     {
-      "hash": "sha256-EHges83BuS864QrD4pziakY4+3gB09E26FABE9lJZr8=",
+      "hash": "sha256-ok4NgMCFGNgF08WGQTRv80e8R5H/1Hl8OmGDSVaFQ0s=",
       "url": "index.html"
     },
     {
@@ -521,7 +521,7 @@ self.assetsManifest = {
       "url": "js\/card-search-controls.js"
     },
     {
-      "hash": "sha256-gmHTrcAXTIa+mQXidcG\/jSiMNc1aXgdy9jXNkXgsQ10=",
+      "hash": "sha256-h4mCrTTUcBfrcf54swqzrqk3emFgMIhstFi6Z1Z8qyg=",
       "url": "js\/card-summary-list.js"
     },
     {
@@ -617,7 +617,7 @@ self.assetsManifest = {
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-W2XnUpLKN6kem+0Tr1nJAyyg0CVBc984EmScPM4\/FfY=",
+      "hash": "sha256-Wda6KE7WSiaFNUaVFLWrBWXGhwVtJFg6hXrO2sawhD8=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -625,7 +625,7 @@ self.assetsManifest = {
       "url": "_framework\/dotnet.native.8.0.30.vhri5d1kn0.js"
     },
     {
-      "hash": "sha256-8wRrH9zOkFE5CR+xdzrT+FZB8y+YBS3hW\/CtNXVxzgQ=",
+      "hash": "sha256-L5Us7k+D8OEzGiEIwuWRmum3\/0BFKEmQtnIX+kdP7J8=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -781,15 +781,15 @@ self.assetsManifest = {
       "url": "_framework\/Microsoft.Win32.SystemEvents.wasm"
     },
     {
-      "hash": "sha256-G6LIOc7ZvOZJ+LfLxOln016ulhTWG85ya0dCwmJi6nA=",
+      "hash": "sha256-KdNudmtL5e6kO+i9u6VEsNYMcpKbMWzZig5UYSBjtHA=",
       "url": "_framework\/MtgCardKeeper.BlazorWasm.wasm"
     },
     {
-      "hash": "sha256-mkqNlcquTTfCsSCFgeiQAi9f414haYo2bJ4EOdMTssI=",
+      "hash": "sha256-Nh09omYNnvvoLC1MAvFB0sPDd\/uQx17+s8NfA9HXVEY=",
       "url": "_framework\/MtgCardKeeper.RclViews.wasm"
     },
     {
-      "hash": "sha256-lawlKLI3prHwjQKM6tj5CGAewU\/eHvwi6kZdn0CpL4M=",
+      "hash": "sha256-kyTiyHGxwqNxD1OXrrLblnQmqCCtq4f\/VVBbpF\/8oDk=",
       "url": "_framework\/MtgCardKeeper.WasmShared.wasm"
     },
     {
@@ -1397,5 +1397,5 @@ self.assetsManifest = {
       "url": "_content\/MtgCardKeeper.RclViews\/tester.js"
     }
   ],
-  "version": "L7AvzC+H"
+  "version": "dN19wx4v"
 };
