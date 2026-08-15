@@ -352,6 +352,14 @@
 .cardSummaryList .card-tile > .mtgc-card:not(.mtgc-constructed)[b-l2xiba3uvs] {
     height: auto;
 }
+
+.card-tile[b-l2xiba3uvs]  .card-tile-owned-count {
+    position: absolute;
+    bottom: 0.35rem;
+    left: 0.35rem;
+    z-index: 6;
+    pointer-events: none;
+}
 /* /Cards/CardSummaryTable.razor.rz.scp.css */
 .card-summary-list[b-ba1coxos9a] {
     --card-summary-list-cols: 2.5rem minmax(6rem, 0.8fr) minmax(8rem, 1.8fr) 4.5rem;
@@ -533,12 +541,17 @@
 
 .card-summary-list-cell-actions[b-ba1coxos9a] {
     display: flex;
-    align-items: flex-start;
-    justify-content: stretch;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.3rem;
 }
 
 .card-summary-list-cell-actions .btn[b-ba1coxos9a] {
     white-space: nowrap;
+}
+
+.card-summary-list-cell-actions[b-ba1coxos9a]  .card-summary-list-owned-count {
+    align-self: center;
 }
 
 /* Compact mobile: thumb + stacked name column + action */
@@ -574,6 +587,24 @@
     .card-summary-list-value[b-ba1coxos9a] {
         font-size: 0.85rem;
     }
+}
+/* /Cards/OwnedCountBadge.razor.rz.scp.css */
+.owned-count-badge[b-ow3b80nz1e] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 999px;
+    background: #111827;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28);
+}
+
+.owned-count-badge i[b-ow3b80nz1e] {
+    font-size: 0.75rem;
 }
 /* /Collection/CollectionToastHost.razor.rz.scp.css */
 .collection-toast-host[b-jsqe0pblde] {
