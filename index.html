@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="mck-build" content="2026-08-15.0904.e6a39da" />
+    <meta name="mck-build" content="2026-08-15.1659.e6a39da" />
     <title>MTG Card Keeper</title>
     <base href="/MtgCardKeeper.App/" />
 
@@ -36,6 +36,11 @@
 </head>
 
 <body>
+    <div id="mck-pwa-update" hidden>
+        <span>New version available</span>
+        <button type="button" id="mck-pwa-update-reload">Reload</button>
+    </div>
+
     <div id="app">
         <!-- Blazor WASM loading indicator (styled in css/app.css) -->
         <svg class="loading-progress">
@@ -59,7 +64,7 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="js/GoogleIntegration.js"></script>
     <script src="js/collection-toasts.js"></script>
-    <script src="js/card-summary-list.js?v=20260815-fastscroll-9"></script>
+    <script src="js/card-summary-list.js"></script>
     <script src="js/card-search-controls.js"></script>
     <script src="js/startup-progress.js"></script>
 
@@ -76,7 +81,7 @@
 
     <script src="_content/Blazor.Bootstrap/blazor.bootstrap.js"></script>
 
-    <script>navigator.serviceWorker.register('service-worker.js');</script>
+    <script src="js/pwa-update.js"></script>
 </body>
 
 </html>

@@ -28,6 +28,10 @@
 </head>
 
 <body>
+    <div id="mck-pwa-update" hidden>
+        <span>New version available</span>
+        <button type="button" id="mck-pwa-update-reload">Reload</button>
+    </div>
     <div id="app">
         <div class="bb-page">
             <aside id="AR1GG06GFEGVR" class="bb-sidebar expanded" style="--bb-sidebar-width: 270px;" role="navigation" b-h9l5f7lx3r="" _bl_2="">
@@ -140,7 +144,7 @@
     <script src="_content/Blazor.Bootstrap/blazor.bootstrap.js">
     </script>
 
-    <script>navigator.serviceWorker.register('service-worker.js');</script>
+    <script src="js/pwa-update.js"></script>
 
     <!-- Visual Studio Browser Link -->
     <script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData" data-requestid="bf98ebb28111431b9b07482f7f7adf00" data-requestmappingfromserver="false" data-connecturl="http://localhost:49234/f923c0112c1a42c9a7980bab13d95926/browserLink">
