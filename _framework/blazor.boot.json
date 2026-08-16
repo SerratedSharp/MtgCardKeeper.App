@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "MtgCardKeeper.BlazorWasm",
   "resources": {
-    "hash": "sha256-RP7wt04aUIFKdyNVj0aI2BzlHHoDUhzwA4VQR+u5GK0=",
+    "hash": "sha256-mavIsXYTekREus8DUQIPDVb1Y5r4EFlLvo6Jae1Iiu0=",
     "jsModuleNative": {
       "dotnet.native.8.0.30.3wu6f2qfkv.js": "sha256-glEOXa30sLuJBpxU9KOlsw2Eogna/xZKUZxbwI68uZQ="
     },
@@ -9,7 +9,7 @@
       "dotnet.runtime.8.0.30.dweckncnnt.js": "sha256-Iz92tEdLDz6hULg8toBVTeVi4QRnFEbFBy3lo3dbmEw="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-CmRYAnFYLiWzzaYXxb1e/7YbZWwrzdoZJZA71sNAQqY="
+      "dotnet.native.wasm": "sha256-Np2vu3mrROarIJuL0DwTbfAk0X+CbsR+i1z29tS4+l4="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
