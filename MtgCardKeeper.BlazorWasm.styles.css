@@ -93,6 +93,10 @@
     min-width: 0;
 }
 
+.search-input-wrap .form-control[b-6yqqaee4zv] {
+    border-radius: 0;
+}
+
 .search-input-invalid[b-6yqqaee4zv] {
     border-color: var(--bs-danger);
 }
