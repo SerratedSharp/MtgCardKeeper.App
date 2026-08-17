@@ -109,6 +109,45 @@
     cursor: help;
 }
 
+#search-filters-btn[b-6yqqaee4zv] {
+    overflow: visible;
+}
+
+.search-filters-btn-icons[b-6yqqaee4zv] {
+    position: relative;
+    display: inline-block;
+}
+
+.search-filters-btn-icons .bi-funnel[b-6yqqaee4zv] {
+    position: relative;
+    z-index: 1;
+}
+
+.search-filters-owned-hand[b-6yqqaee4zv] {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-filters-owned-hand-spacer[b-6yqqaee4zv] {
+    display: block;
+    width: 1em;
+    height: 0.75em;
+    flex: 0 0 0.75em;
+}
+
+.search-filters-owned-hand[b-6yqqaee4zv]  .fa-hand-holding {
+    font-size: 0.85em;
+    line-height: 1;
+    display: block;
+}
+
 .search-filters-body[b-6yqqaee4zv] {
     display: flex;
     flex-direction: column;
@@ -352,6 +391,15 @@
 .cardSummaryList .card-tile > .mtgc-card:not(.mtgc-constructed)[b-l2xiba3uvs] {
     height: auto;
 }
+
+.card-tile[b-l2xiba3uvs]  .card-tile-owned-count {
+    position: absolute;
+    bottom: 0.35rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 21;
+    pointer-events: auto;
+}
 /* /Cards/CardSummaryTable.razor.rz.scp.css */
 .card-summary-list[b-ba1coxos9a] {
     --card-summary-list-cols: 2.5rem minmax(6rem, 0.8fr) minmax(8rem, 1.8fr) 4.5rem;
@@ -533,12 +581,17 @@
 
 .card-summary-list-cell-actions[b-ba1coxos9a] {
     display: flex;
-    align-items: flex-start;
-    justify-content: stretch;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.3rem;
 }
 
 .card-summary-list-cell-actions .btn[b-ba1coxos9a] {
     white-space: nowrap;
+}
+
+.card-summary-list-cell-actions[b-ba1coxos9a]  .card-summary-list-owned-count {
+    align-self: center;
 }
 
 /* Compact mobile: thumb + stacked name column + action */
@@ -574,6 +627,44 @@
     .card-summary-list-value[b-ba1coxos9a] {
         font-size: 0.85rem;
     }
+}
+/* /Cards/OwnedCountBadge.razor.rz.scp.css */
+.owned-count-badge[b-ow3b80nz1e] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    padding: 0.05rem 0.24rem 0.1rem;
+    border-radius: 999px;
+    background: #111827;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1;
+    box-shadow:
+        0 0 0 1.5px #fff,
+        0 1px 3px rgba(0, 0, 0, 0.28);
+    pointer-events: auto;
+    cursor: help;
+}
+
+.owned-count-icon[b-ow3b80nz1e] {
+    display: inline-flex;
+    width: 1.05em;
+    height: 1em;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.owned-count-icon[b-ow3b80nz1e]  .fa-hand-holding,
+.owned-count-icon .bi-inboxes[b-ow3b80nz1e] {
+    display: block;
+    font-size: 0.92em;
+    line-height: 1;
+    width: auto;
+    height: auto;
 }
 /* /Collection/CollectionToastHost.razor.rz.scp.css */
 .collection-toast-host[b-jsqe0pblde] {

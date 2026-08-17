@@ -3,6 +3,16 @@
         return;
     }
 
+    const build = document.querySelector('meta[name="mck-build"]')?.getAttribute('content');
+    if (!build || build === 'local') {
+        navigator.serviceWorker.getRegistrations().then(function (registrations) {
+            registrations.forEach(function (registration) {
+                registration.unregister();
+            });
+        });
+        return;
+    }
+
     const coldStartMs = 8000;
     const updateIntervalMs = 60 * 60 * 1000;
     const reloadFlagKey = 'mck-pwa-reloading';
