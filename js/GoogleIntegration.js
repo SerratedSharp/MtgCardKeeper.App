@@ -1159,6 +1159,37 @@ window.upsertAppDataFile = async function (filename, content, mimeType, keepaliv
     }
 };
 
+/**
+ * Start an appData upsert without holding Blazor JS interop for the Drive round-trip.
+ * Completes via OnDetachedAppDataUpsertCompleted on the given .NET ref.
+ */
+window.upsertAppDataFileDetached = function (filename, content, mimeType, keepalive, requestId, dotNetRef) {
+    Promise.resolve()
+        .then(() => window.upsertAppDataFile(filename, content, mimeType, keepalive))
+        .then(result => {
+            if (dotNetRef) {
+                return dotNetRef.invokeMethodAsync(
+                    'OnDetachedAppDataUpsertCompleted',
+                    requestId,
+                    !!(result && result.ok),
+                    (result && result.fileId) || '',
+                    (result && result.status) || 0,
+                    (result && result.error) || '');
+            }
+        })
+        .catch(e => {
+            if (dotNetRef) {
+                return dotNetRef.invokeMethodAsync(
+                    'OnDetachedAppDataUpsertCompleted',
+                    requestId,
+                    false,
+                    '',
+                    e.status || 0,
+                    e.message || String(e));
+            }
+        });
+};
+
 async function deleteAppDataFileById(token, fileId) {
     const response = await fetch(`https://www.googleapis.com/drive/v3/files/${fileId}`, {
         method: 'DELETE',

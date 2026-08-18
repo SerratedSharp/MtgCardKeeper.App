@@ -80,21 +80,6 @@
     pointer-events: auto;
 }
 
-/* Touch-first phones/tablets: larger tap targets. Fine pointers (mouse/trackpad) keep btn-sm.
-   Uses primary pointer, not any-pointer, so a full-size touch laptop stays compact. */
-@media (hover: none) and (pointer: coarse) {
-    .card-overlay-btn[b-kh2yvkflwd] {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.45rem 0.7rem;
-        font-size: 1.05rem;
-        line-height: 1;
-        min-width: 2.75rem;
-        min-height: 2.75rem;
-    }
-}
-
 /* Generic deck-back flip: same behavior, slightly subdued chrome vs distinct Scryfall back faces. */
 .card-overlay-btn-flip-default[b-kh2yvkflwd] {
     background-color: #e9ecef;
@@ -106,10 +91,6 @@
     position: relative;
     flex: 1 1 auto;
     min-width: 0;
-}
-
-.search-input-wrap .form-control[b-6yqqaee4zv] {
-    border-radius: 0;
 }
 
 .search-input-invalid[b-6yqqaee4zv] {
